@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guild Wars 2 API Test</title>
+<meta name="author" content="Alessio Linares" >
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="style.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+<body>
+<table class="table" id="content" style="width:700px;margin: auto auto">
+
+</table>
+
+<script type="text/javascript">
+
+var puntuaciones = new Array();
+var charts = new Array();
+var objective_names = new Array();
+
+function objectiveGetName(id)
+{
+	var ret = "Not Found";
+	var found = false;
+	for (var i = objective_names.length - 1; i >= 0 && !found; i--) {
+		if (objective_names[i].id == id)
+		{
+			ret = objective_names[i].name;
+			found = true;
+		}
+	};
+	return ret;
+}
+
+function getWorldName(id, world_names) {
+	var i = 0;
+	while (i < world_names.length)
+	{
+		if (world_names[i].id == id) return world_names[i].name;  
+		++i;
+	}
+	return "Not found";
+}
+
+function getTeamColor (team)
+{
+	var color = "";
+	if (team == "Green" || team == "green") color = "#5eb95e";
+	if (team == "Blue" || team == "blue") color = "#4bb1cf";
+	if (team == "Red" || team == "red") color = "#dd514c";
+	return color;
+}
+
+function max (a, b, c)
+{
+	if (a > b)
+	{
+		if (a > c) return a;
+		else return c;
+	}
+	else if (b > c)
+	{
+		return b;
+	}
+	else return c;
+}
+
+function getMatchCallBack(i, id)
+{
+	return function (status)
+	{
+		var str = "id"+i;
+		console.log("Actualizando puntuaciones");
+		$("#"+str+"team0").html(status.scores[0]);
+		$("#"+str+"team1").html(status.scores[1]);
+		$("#"+str+"team2").html(status.scores[2]);
+		var max_score = max(status.scores[0], status.scores[1], status.scores[2]);
+
+		console.log("Contando sitios");
+		var blue = 0;
+		var green = 0;
+		var red = 0;
+		for (var k = status.maps.length - 1; k >= 0; k--) {
+			for(var j = 0; j < status.maps[k].objectives.length; ++j)
+			{
+				if (status.maps[k].objectives[j].owner == "Green")
+				{
+					var name = objectiveGetName(status.maps[k].objectives[j].id);
+					if (name == "Castle")
+					{
+						green += 35;
+					}
+					else if (name == "Keep")
+					{
+						green += 25;
+					}
+					else if (name == "Tower")
+					{
+						green += 10;
+					}
+					else
+					{
+						green += 5;
+					}
+				}
+				else if (status.maps[k].objectives[j].owner == "Blue")
+				{
+					var name = objectiveGetName(status.maps[k].objectives[j].id);
+					if (name == "Castle")
+					{
+						blue += 35;
+					}
+					else if (name == "Keep")
+					{
+						blue += 25;
+					}
+					else if (name == "Tower")
+					{
+						blue += 10;
+					}
+					else
+					{
+						blue += 5;
+					}
+				}
+				else if (status.maps[k].objectives[j].owner == "Red")
+				{
+					var name = objectiveGetName(status.maps[k].objectives[j].id);
+					if (name == "Castle")
+					{
+						red += 35;
+					}
+					else if (name == "Keep")
+					{
+						red += 25;
+					}
+					else if (name == "Tower")
+					{
+						red += 10;
+					}
+					else
+					{
+						red += 5;
+					}
+				}
+			};
+		};
+		console.log("id:"+id);
+		//console.log("Actualizando puntuaciones de "+i+" (antes): "+puntuaciones[id][0].y+", "+puntuaciones[id][1].y+", "+puntuaciones[id][2].y);
+		puntuaciones[id][0].y = blue;
+		puntuaciones[id][1].y = green;
+		puntuaciones[id][2].y = red;
+
+		console.log("Actualizadas puntuaciones de "+i+" (despues): "+puntuaciones[id][0].y+", "+puntuaciones[id][1].y+", "+puntuaciones[id][2].y);
+		console.log("Rendering "+i);
+		charts[id].render();
+		
+		console.log("Actualizando barras");
+		$("#"+"id"+i+"barteam2").css("width", (status.scores[2]/max_score*100)+"%");
+		$("#"+"id"+i+"barteam2").html("+"+green);
+		$("#"+"id"+i+"barteam1").css("width", (status.scores[1]/max_score*100)+"%");
+		$("#"+"id"+i+"barteam1").html("+"+blue);
+		$("#"+"id"+i+"barteam0").css("width", (status.scores[0]/max_score*100)+"%");
+		$("#"+"id"+i+"barteam0").html("+"+red);
+	};
+}
+
+function update()
+{
+	$.getJSON("https://api.guildwars2.com/v1/world_names.json", function (world_names) {
+		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json", function (aux_matches) {
+			var matches = aux_matches.wvw_matches;
+			for (i = 0; i < matches.length; ++i) {
+				if (matches[i].wvw_match_id[0] == "2")
+				{
+					var id = matches[i].wvw_match_id[matches[i].wvw_match_id.length-1];
+					$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ matches[i].wvw_match_id, getMatchCallBack(i, id));
+				}
+			}
+		});
+	});	
+}
+
+$.getJSON("https://api.guildwars2.com/v1/wvw/objective_names.json", function (aux_objective_names) {
+	objective_names = aux_objective_names;
+});
+$.getJSON("https://api.guildwars2.com/v1/world_names.json?lang=es", function (world_names) {
+	$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json", function (aux_matches) {
+		var matches = aux_matches.wvw_matches;
+		for (i = 0; i < matches.length; ++i) {
+			if (matches[i].wvw_match_id[0] == "2")
+			{
+				$("#content").append(
+					"<tr><td><strong>"+
+					"<strong>Tier "+ matches[i].wvw_match_id[matches[i].wvw_match_id.length-1] +"</strong><br>"+
+					"<span style='color:#5eb95e;' id='"+matches[i].green_world_id+"'>"+ getWorldName(matches[i].green_world_id, world_names) +"</span><br>"+
+					"<span style='color:#4bb1cf;' id='"+matches[i].blue_world_id+"'>"+ getWorldName(matches[i].blue_world_id, world_names) +"</span><br>"+
+					"<span style='color:#dd514c;' id='"+matches[i].red_world_id+"'>"+ getWorldName(matches[i].red_world_id, world_names) +"</span><br>"+
+					"</strong></td>"+
+					"<td style='text-align:right;'><strong>"+
+					"<br>"+
+					"<span id='id"+i+"team2'></span><br>"+
+					"<span id='id"+i+"team1'></span><br>"+
+					"<span id='id"+i+"team0'></span><br>"+
+					"</strong></td>"+
+					"<td id='id"+i+"bars' style='width:200px;'>"+
+					"<br>"+
+					"<div class='score-bar progress progress-success'>"+
+					"<div id='id"+i+"barteam2' class='bar' style='width: 0%'></div>"+
+					"</div>"+
+					"<div class='score-bar progress progress-info'>"+
+					"<div id='id"+i+"barteam1' class='bar' style='width: 0%'></div>"+
+					"</div>"+
+					"<div class='score-bar progress progress-danger'>"+
+					"<div id='id"+i+"barteam0' class='bar' style='width: 0%'></div>"+
+					"</div>"+
+					"</td>"+
+					"<td width='120px'><div id='id"+i+"chart' style='width:100px; height:100px;'></div>"+
+					"</tr>"
+				);
+				var id = matches[i].wvw_match_id[matches[i].wvw_match_id.length-1];
+				puntuaciones[id] = [
+					{ label: "", y: 10, color: getTeamColor("Blue") },
+					{ label: "", y: 10, color: getTeamColor("Green") },
+					{ label: "", y: 10, color: getTeamColor("Red") },
+				];
+				charts[id] = new CanvasJS.Chart("id"+i+"chart", {
+					theme: "theme2",//theme1
+					title:{
+						text: ""			  
+						},
+						data: [              
+              {
+// Change type to "bar", "splineArea", "area", "spline", "pie",etc.
+                  type: "pie",
+                  startAngle:-90,
+       			  toolTipContent:"+{y}",
+                  dataPoints: puntuaciones[id]
+              }
+              ]
+				});
+
+				$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ matches[i].wvw_match_id, getMatchCallBack(i, id));
+			}
+		}
+	});
+});
+
+self.setInterval(function(){update()},5000);
+</script>
+</body>
+</html>
