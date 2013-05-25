@@ -2,18 +2,42 @@
 <html>
 <head>
 <title>Guild Wars 2 API Test</title>
-<meta name="author" content="Alessio Linares" >
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta http-equiv="content-style-type" content="text/css">
-<link href="bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="style.css" rel="stylesheet" media="screen">
+<meta name="author" content="Alessio Linares" ></meta>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+<meta http-equiv="content-style-type" content="text/css"></meta>
+<link href="bootstrap.min.css" rel="stylesheet" media="screen" ></link>
+<link href="style.css" rel="stylesheet" media="screen" ></link>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js" ></script>
 <script type="text/javascript" src="canvasjs.min.js"></script>
 </head>
 <body>
 <ul class="nav nav-tabs">
-<li class="view active">
-	<a class="sel" id="baruch-timers" href="#">Bahía de Baruch</a>
+<li class="view">
+	<a class="sel" id="timers2-1" href="#2-1">Tier 1</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-2" href="#2-2">Tier 2</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-3" href="#2-3">Tier 3</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-4" href="#2-4">Tier 4</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-5" href="#2-5">Tier 5</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-6" href="#2-6">Tier 6</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-7" href="#2-7">Tier 7</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-8" href="#2-8">Tier 8</a>
+</li>
+<li class="view">
+    <a class="sel" id="timers2-9" href="#2-9">Tier 9</a>
 </li>
 <li class="view">
 	<a class="sel" id="all" href="#">Europa</a>
@@ -23,11 +47,11 @@
     </div>
     <script type="text/javascript">
 	$(document).ready(function(){
-        $("#view").load("baruch-timers.html");
+        $("#view").load("timers.html");
 		$(".view").click(function(){
 			$(".view").removeClass("active");
 			$(this).addClass("active");
-			$("#view").load($(this).children().attr("id")+".html");
+			$("#view").load("timers.html"+$(this).children().attr("href"));
 		});
 	});
     </script>
