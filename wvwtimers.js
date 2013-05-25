@@ -283,6 +283,8 @@ $(document).ready(function(){
 	viewing_match = url.hash.substring(1, 4);
 	if (viewing_match == "") viewing_match = "2-1";
 	$("#timers"+viewing_match).parent().addClass("active");
+	$(".map-view").children().attr("href", "#"+viewing_match);
+	$(".map-view-all").children().attr("href", "#"+viewing_match);
 	$.getJSON("https://api.guildwars2.com/v1/wvw/objective_names.json", function (aux_objective_names) {
 		objective_names = aux_objective_names;
 	});
