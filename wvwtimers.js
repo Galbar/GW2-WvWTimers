@@ -205,6 +205,17 @@ function getMatchCallBack(i)
 				}
 			};
 		};
+<<<<<<< HEAD
+=======
+//		console.log("Actualizando puntuaciones de "+i+" (antes): "+puntuaciones[0].y+", "+puntuaciones[1].y+", "+puntuaciones[2].y);
+		puntuaciones[0].y = blue;
+		puntuaciones[1].y = green;
+		puntuaciones[2].y = red;
+
+//		console.log("Actualizadas puntuaciones de "+i+" (despues): "+puntuaciones[0].y+", "+puntuaciones[1].y+", "+puntuaciones[2].y);
+//		console.log("Rendering "+i);
+		charts.render();
+>>>>>>> gh-pages
 		
 //		console.log("Actualizando barras");
 		$("#"+"id"+i+"barteam2").css("width", (status.scores[2]/max_score*100)+"%");
@@ -310,8 +321,34 @@ $(document).ready(function(){
 						"<div id='id"+i+"barteam0' class='bar' style='width: 0%'></div>"+
 						"</div>"+
 						"</td>"+
+<<<<<<< HEAD
 						"</tr>"
 					);
+=======
+						"<td width='120px'><div id='id"+i+"chart' style='width:100px; height:100px;'></div>"+
+						"</tr>"
+					);
+					puntuaciones = [
+						{ label: "", y: 10, color: "#4bb1cf" },
+						{ label: "", y: 10, color: "#5eb95e" },
+						{ label: "", y: 10, color: "#dd514c" },
+					];
+					charts = new CanvasJS.Chart("id"+i+"chart", {
+						theme: "theme2",//theme1
+						title:{
+							text: ""			  
+							},
+							data: [              
+	              {
+	// Change type to "bar", "splineArea", "area", "spline", "pie",etc.
+	                  type: "pie",
+	                  startAngle:-90,
+	       			  toolTipContent:"+{y}",
+	                  dataPoints: puntuaciones
+	              }
+	              ]
+					});
+>>>>>>> gh-pages
 
 					$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ matches[i].wvw_match_id, getMatchCallBack(i));
 				}
