@@ -1,0 +1,29 @@
+.score-bar
+{
+	margin-bottom: 1px;
+}
+iframe
+{
+	border: 0;
+	width: 100%;
+	height: 500px;
+}
+.GreenTeamColor
+{
+	color: #5eb95e;
+}
+
+.BlueTeamColor
+{
+	color: #4bb1cf;
+}
+
+.RedTeamColor
+{
+	color: #dd514c;
+}
+
+.NoTeamColor
+{
+	color: #333;
+}
