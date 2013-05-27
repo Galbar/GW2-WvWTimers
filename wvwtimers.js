@@ -293,13 +293,11 @@ $(document).ready(function(){
 						"<span style='color:#dd514c;' id='"+matches[i].red_world_id+"'>"+ getWorldName(matches[i].red_world_id, world_names) +"</span><br>"+
 						"</strong></td>"+
 						"<td style='text-align:right;'><strong>"+
-						"<br>"+
 						"<span id='id"+i+"team2'></span><br>"+
 						"<span id='id"+i+"team1'></span><br>"+
 						"<span id='id"+i+"team0'></span><br>"+
 						"</strong></td>"+
-						"<td id='id"+i+"bars' style='width:500px;'>"+
-						"<br>"+
+						"<td id='id"+i+"bars' style='width:400px;'>"+
 						"<div class='score-bar progress progress-success'>"+
 						"<div id='id"+i+"barteam2' class='bar' style='width: 0%'></div>"+
 						"</div>"+
