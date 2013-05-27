@@ -298,7 +298,7 @@ $(document).ready(function(){
 						"<span id='id"+i+"team1'></span><br>"+
 						"<span id='id"+i+"team0'></span><br>"+
 						"</strong></td>"+
-						"<td id='id"+i+"bars' >"+
+						"<td id='id"+i+"bars' style='width:500px;'>"+
 						"<br>"+
 						"<div class='score-bar progress progress-success'>"+
 						"<div id='id"+i+"barteam2' class='bar' style='width: 0%'></div>"+
