@@ -174,7 +174,7 @@ function getMatchCallBack(i)
 			{
 				if(status.maps[k].objectives[j].owner != hist_status.maps[k].objectives[j].owner)
 				{
-					$("#loghead").after(
+					$("#log").append(
 						"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
 						"<td class='map-"+status.maps[k].type+"'>"+
 						"<strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
