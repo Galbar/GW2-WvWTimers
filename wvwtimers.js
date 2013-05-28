@@ -149,6 +149,14 @@ function getMapName(id)
 	return ret;
 }
 
+function getObjectiveType (id)
+{
+	if (objectives[id][1] == 5) return "camp";
+	if (objectives[id][1] == 10) return "tower";
+	if (objectives[id][1] == 25) return "keep";
+	if (objectives[id][1] == 35) return "castle";
+}
+
 function getMatchCallBack(i)
 {
 	return function (status)
@@ -177,7 +185,7 @@ function getMatchCallBack(i)
 					$("#log").append(
 						"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
 						"<td class='map-"+status.maps[k].type+"'>"+
-						"<strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
+						"<i class='objective-"+status.maps[k].objectives[j].owner+" "+getObjectiveType(status.maps[k].objectives[j].id)+"'></i><strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
 						"</td>"+
 						"<td class='map-"+status.maps[k].type+"'>"+
 						"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'>05 : 00</span>"+
