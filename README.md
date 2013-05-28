@@ -3,8 +3,12 @@ GW2-WvWTimers
 
 Displays the remaining time of recent conquered places' Lord's buff
 
+Example: galbar.github.io/GW2-WvWTimers/
+
 # Simple Web Widget
 Inside the folder *server-widget* you will find all the files you need to add to your site a simplifyed version of GW2-WvWTimers.
+
+Example: galbar.github.io/GW2-WvWTimers/server-widget/
 
 ## How to add it to a web
 You will find all the files needed inside the folder *server-widget* in this repository.
