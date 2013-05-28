@@ -1,0 +1,23 @@
+.score-bar
+{
+	margin-bottom: 1px;
+}
+.GreenTeamColor
+{
+	color: #5eb95e;
+}
+
+.BlueTeamColor
+{
+	color: #4bb1cf;
+}
+
+.RedTeamColor
+{
+	color: #dd514c;
+}
+
+.NoTeamColor
+{
+	color: #333;
+}
