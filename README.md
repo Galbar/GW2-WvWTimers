@@ -26,10 +26,12 @@ Now, to add the widget, copy the files *wvwtimers-widget-style.css* and *wvwtime
 <script type='text/javascript' src='wvwtimers-widget.js'></script>
 ```
 
-Last thing you have to do is to add the widget wherever you want in your web, for doing so insert the following line where you want it to be in your page:
+Next thing you have to do is to add the widget wherever you want in your web, for doing so insert the following line where you want it to be in your page:
 ```
 <div class="WvWTimers-widget" server-id="2301" show-charts="true" style="overfolw: auto; width: 100%;"></div>
 ```
+
+Finally, just copy the folder *img* into the same directory where your web page is placed.
 
 ## How to set up the widget
 There are two parameters you may want to set in the widget.
