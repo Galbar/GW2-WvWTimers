@@ -14,24 +14,20 @@ Example: http://galbar.github.io/GW2-WvWTimers/server-widget/
 You will find all the files needed inside the folder *server-widget* in this repository.
 
 First you need to have at least jquery 1.9.1 (http://jquery.com/). If you don't have it, just add the file *jquery-1.9.1.min.js* to a folder in your site (p.e. /a/folder/) and add the following line to the header of the page:
-`<script type='text/javascript' src='/a/folder/jquery-1.9.1.min.js' ></script>`
-
-Second you will also need bootstrap (http://twitter.github.io/bootstrap/). If you don't have it, all you need to do is add the file *bootstrap.min.css* to a folder in 
-your site (p.e. /an/other/folder/) and add the following line to the header of the page:
-`<link href='/an/other/folder/bootstrap.min.css' rel='stylesheet' media='screen'></link>`
-
-Now, to add the widget, copy the files *wvwtimers-widget-style.css* and *wvwtimers-widget.js* to a folder in your site (p.e. /widget/folder/) and add the following lines to the header of the web page:
 ```
+<script type='text/javascript' src='/a/folder/jquery-1.9.1.min.js' ></script>
+```
+
+Next thing you have to do is to add the widget wherever you want in your web, for doing so insert the following lines where you want it to be in your page:
+```
+<!-- GW2-WvWTimers Widget -->
+<div class="WvWTimers-widget" server-id="2301" show-charts="true" style="overfolw: auto; width: 100%;"></div>
 <link href='wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
 <script type='text/javascript' src='wvwtimers-widget.js'></script>
+<!-- End of widget -->
 ```
 
-Next thing you have to do is to add the widget wherever you want in your web, for doing so insert the following line where you want it to be in your page:
-```
-<div class="WvWTimers-widget" server-id="2301" show-charts="true" style="overfolw: auto; width: 100%;"></div>
-```
-
-Finally, just copy the folder *img* into the same directory where your web page is placed.
+Finally, just copy the folder *img* into the same folder where your web page with the widget is placed.
 
 ## How to set up the widget
 There are two parameters you may want to set in the widget.
