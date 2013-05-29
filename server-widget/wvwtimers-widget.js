@@ -168,7 +168,7 @@ function getMatchCallBack(i)
 			hist_status = status;
 //			console.log("inicializando hist_status");
 		}
-		if ($(".WvWTimers-widget").attr("show-charts") == "true")
+		if ($(".WvWTimers-widget").attr("mode") < "2")
 		{
 			var str = "id"+i;
 //			console.log("Actualizando puntuaciones");
@@ -184,23 +184,26 @@ function getMatchCallBack(i)
 		for (var k = status.maps.length - 1; k >= 0; k--) {
 			for(var j = 0; j < status.maps[k].objectives.length; ++j)
 			{
-				if(status.maps[k].objectives[j].owner != hist_status.maps[k].objectives[j].owner)
+				if ($(".WvWTimers-widget").attr("mode") > "0")
 				{
-					$("#log").append(
-						"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
-						"<td class='map-"+status.maps[k].type+"'>"+
-						"<i class='objective-"+status.maps[k].objectives[j].owner+" "+getObjectiveType(status.maps[k].objectives[j].id)+"'></i><strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
-						"</td>"+
-						"<td class='map-"+status.maps[k].type+"'>"+
-						"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'>05 : 00</span>"+
-						"</td>"+
-						"</tr>");
-					if (viewing_map != "all" && status.maps[k].type != viewing_map)
+					if(status.maps[k].objectives[j].owner != hist_status.maps[k].objectives[j].owner)
 					{
-						$(".map-"+status.maps[k].type).css("display", "none");
+						$("#log").append(
+							"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
+							"<td class='map-"+status.maps[k].type+"'>"+
+							"<i class='objective-"+status.maps[k].objectives[j].owner+" "+getObjectiveType(status.maps[k].objectives[j].id)+"'></i><strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
+							"</td>"+
+							"<td class='map-"+status.maps[k].type+"'>"+
+							"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'>05 : 00</span>"+
+							"</td>"+
+							"</tr>");
+						if (viewing_map != "all" && status.maps[k].type != viewing_map)
+						{
+							$(".map-"+status.maps[k].type).css("display", "none");
+						}
+						objectives[status.maps[k].objectives[j].id][2] = new Date();
+						hist_status.maps[k].objectives[j] = status.maps[k].objectives[j];
 					}
-					objectives[status.maps[k].objectives[j].id][2] = new Date();
-					hist_status.maps[k].objectives[j] = status.maps[k].objectives[j];
 				}
 				if (status.maps[k].objectives[j].owner == "Green")
 				{
@@ -216,8 +219,7 @@ function getMatchCallBack(i)
 				}
 			};
 		};
-
-		if ($(".WvWTimers-widget").attr("show-charts") == "true")
+		if ($(".WvWTimers-widget").attr("mode") < "2")
 		{
 //			console.log("Actualizando barras");
 			$("#"+"id"+i+"barteam2").css("width", (status.scores[2]/max_score*100)+"%");
@@ -268,39 +270,47 @@ function updateTimers()
 }
 
 $(document).ready(function(){
+	if ($(".WvWTimers-widget").attr("mode") < "2")
+		console.info("mode < 2");
+	if ($(".WvWTimers-widget").attr("mode") > "0")
+		console.info("mode > 0");
+
 console.log("la pagina está lista!");
-if ($(".WvWTimers-widget").attr("show-charts") == "true")
+if ($(".WvWTimers-widget").attr("mode") < "2")
 {
 	$(".WvWTimers-widget").append(
 	"<table id='WvW-widget-content' style='max-width: 670px; width: 100%;margin: auto auto'></table>");
 }
-$(".WvWTimers-widget").append(
-"<div style='width:100%; max-width: 670px; margin: auto auto'>"+
-"<ul class='nav nav-tabs'>"+
-"<li class='map-view-all active' id='all'>"+
-"	<a href='#'>All maps</a>"+
-"</li>"+
-"<li class='map-view'  id='Center'>"+
-"	<a href='#' class='NoTeamColor'>Eternal Battlegrounds</a>"+
-"</li>"+
-"<li class='map-view'  id='GreenHome'>"+
-"	<a href='#' class='GreenTeamColor'>Green Borderlands</a>"+
-"</li>"+
-"<li class='map-view'  id='BlueHome'>"+
-"	<a href='#' class='BlueTeamColor'>Blue Borderlands</a>"+
-"</li>"+
-"<li class='map-view'  id='RedHome'>"+
-"	<a href='#' class='RedTeamColor'>Red Borderlands</a>"+
-"</li>"+
-"</ul>"+
-"<table id='log' class='table'>"+
-"<tr id='loghead'>"+
-"<th>Objective</th>"+
-"<th>Time</th>"+
-"</tr>"+
-"</table>"+
-"<span style='text-align: right; font-size: 0.7em; display: block;'>By <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>"+
-"</div>");
+if ($(".WvWTimers-widget").attr("mode") > "0")
+{
+	$(".WvWTimers-widget").append(
+	"<div style='width:100%; max-width: 670px; margin: auto auto'>"+
+	"<ul class='nav nav-tabs'>"+
+	"<li class='map-view-all active' id='all'>"+
+	"	<a href='#'>All maps</a>"+
+	"</li>"+
+	"<li class='map-view'  id='Center'>"+
+	"	<a href='#' class='NoTeamColor'>Eternal Battlegrounds</a>"+
+	"</li>"+
+	"<li class='map-view'  id='GreenHome'>"+
+	"	<a href='#' class='GreenTeamColor'>Green Borderlands</a>"+
+	"</li>"+
+	"<li class='map-view'  id='BlueHome'>"+
+	"	<a href='#' class='BlueTeamColor'>Blue Borderlands</a>"+
+	"</li>"+
+	"<li class='map-view'  id='RedHome'>"+
+	"	<a href='#' class='RedTeamColor'>Red Borderlands</a>"+
+	"</li>"+
+	"</ul>"+
+	"<table id='log' class='table'>"+
+	"<tr id='loghead'>"+
+	"<th>Objective</th>"+
+	"<th>Time</th>"+
+	"</tr>"+
+	"</table>"+
+	"<span style='text-align: right; font-size: 0.7em; display: block;'>By <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>"+
+	"</div>");
+}
 
 viewing_server = $(".WvWTimers-widget").attr("server-id");
 console.log("viewing_server: "+viewing_server);
@@ -327,7 +337,7 @@ console.log("viewing_server: "+viewing_server);
 				if (matches[i].green_world_id == viewing_server || matches[i].blue_world_id == viewing_server || matches[i].red_world_id == viewing_server)
 				{
 					found = true;
-					if ($(".WvWTimers-widget").attr("show-charts") == "true")
+					if ($(".WvWTimers-widget").attr("mode") < "2")
 					{
 						$("#WvW-widget-content").append(
 							"<tr><td><strong>"+
@@ -360,5 +370,6 @@ console.log("viewing_server: "+viewing_server);
 		});
 	});
 	self.setInterval(function(){update()},5000);
-	self.setInterval(function(){updateTimers()}, 500);
+	if($(".WvWTimers-widget").attr("mode") > "0")
+		self.setInterval(function(){updateTimers()}, 500);
 });
