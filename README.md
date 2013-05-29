@@ -21,7 +21,7 @@ First you need to have at least jquery 1.9.1 (http://jquery.com/). If you don't 
 Next thing you have to do is to add the widget wherever you want in your web, for doing so insert the following lines where you want it to be in your page:
 ```
 <!-- GW2-WvWTimers Widget -->
-<div class="WvWTimers-widget" server-id="2301" show-charts="true" style="overfolw: auto; width: 100%;"></div>
+<div class="WvWTimers-widget" server-id="2301" mode="1" style="overfolw: auto; width: 100%;"></div>
 <link href='wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
 <script type='text/javascript' src='wvwtimers-widget.js'></script>
 <!-- End of widget -->
