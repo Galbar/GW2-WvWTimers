@@ -69,38 +69,38 @@
 	background-color:#468847;
 }
 
-.score-bar
+.WvWTimers-widget .score-bar
 {
 	margin-bottom: 1px;
 }
 
-.GreenTeamColor
+.WvWTimers-widget .GreenTeamColor
 {
 	color: #5eb95e !important;
 }
 
-.BlueTeamColor
+.WvWTimers-widget .BlueTeamColor
 {
 	color: #4bb1cf !important;
 }
 
-.RedTeamColor
+.WvWTimers-widget .RedTeamColor
 {
 	color: #dd514c !important;
 }
 
-.NoTeamColor
+.WvWTimers-widget .NoTeamColor
 {
 	color: #333 !important;
 }
 
-.map-all td
+.WvWTimers-widget .map-all td
 {
 	vertical-align: middle;
 }
 
-[class^="objective-"],
-[class*=" objective-"]
+.WvWTimers-widget [class^="objective-"],
+.WvWTimers-widget [class*=" objective-"]
 {
 	position: relative;
 	top: 7px;
@@ -117,37 +117,37 @@
 			border-radius: 14px;
 }
 
-.objective-Green
+.WvWTimers-widget .objective-Green
 {
 	background-color: #5eb95e;
 }
 
-.objective-Blue
+.WvWTimers-widget .objective-Blue
 {
 	background-color: #4bb1cf;
 }
 
-.objective-Red
+.WvWTimers-widget .objective-Red
 {
 	background-color: #dd514c;
 }
 
-.castle
+.WvWTimers-widget .castle
 {
 	background-image: url("img/castle.png") ;
 }
 
-.keep
+.WvWTimers-widget .keep
 {
 	background-image: url("img/keep.png");
 }
 
-.tower
+.WvWTimers-widget .tower
 {
 	background-image: url("img/tower.png");
 }
 
-.camp
+.WvWTimers-widget .camp
 {
 	background-image: url("img/camp.png");
 }
