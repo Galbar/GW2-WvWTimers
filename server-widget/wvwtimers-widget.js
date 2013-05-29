@@ -232,8 +232,8 @@ function getMatchCallBack(i)
 
 function update()
 {
-	$.getJSON("https://api.guildwars2.com/v1/world_names.json", function (world_names) {
-		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json", function (aux_matches) {
+	$.getJSON("https://api.guildwars2.com/v1/world_names.json?", function (world_names) {
+		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
 			var matches = aux_matches.wvw_matches;
 			var found = false
 			for (i = 0; i < matches.length && !found; ++i) {
@@ -318,8 +318,9 @@ console.log("viewing_server: "+viewing_server);
 		$(".map-all").css("display", "");
 		viewing_map = $(this).attr("id");
 	});
-	$.getJSON("https://api.guildwars2.com/v1/world_names.json", function (world_names) {
-		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json", function (aux_matches) {
+	console.log("getting ready");
+	$.getJSON("https://api.guildwars2.com/v1/world_names.json?", function (world_names) {
+		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
 			var matches = aux_matches.wvw_matches;
 			var found = false;
 			for (i = 0; i < matches.length && !found; ++i) {
