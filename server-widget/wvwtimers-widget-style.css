@@ -8,10 +8,10 @@
 
 .WvWTimers-widget ul{padding:0;margin:0 0 10px 25px}
 .WvWTimers-widget li{line-height:20px}
-.WvWTimers-widget .nav{margin-bottom:20px;margin-left:0;list-style:none}
-.WvWTimers-widget .nav>li>a{display:block}
-.WvWTimers-widget .nav>li>a:hover, .WvWTimers-widget .nav>li>a:focus{text-decoration:none;background-color:#eee}
-.WvWTimers-widget .nav li+.nav-header{margin-top:9px}
+.WvWTimers-widget .nav-maps{margin-bottom:20px;margin-left:0;list-style:none}
+.WvWTimers-widget .nav-maps>li>a{display:block}
+.WvWTimers-widget .nav-maps>li>a:hover, .WvWTimers-widget .nav-maps>li>a:focus{text-decoration:none;background-color:#eee}
+.WvWTimers-widget .nav-maps li+.nav-header{margin-top:9px}
 .WvWTimers-widget .nav-tabs,{*zoom:1}
 .WvWTimers-widget .nav-tabs:before, .WvWTimers-widget .nav-tabs:after{display:table;line-height:0;content:""}
 .WvWTimers-widget .nav-tabs:after{clear:both}

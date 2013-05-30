@@ -285,7 +285,7 @@ if ($(".WvWTimers-widget").attr("mode") > "0")
 {
 	$(".WvWTimers-widget").append(
 	"<div style='width:100%; max-width: 670px; margin: auto auto'>"+
-	"<ul class='nav nav-tabs'>"+
+	"<ul class='nav-maps nav-tabs'>"+
 	"<li class='map-view-all active' id='all'>"+
 	"	<a href='#'>All maps</a>"+
 	"</li>"+
