@@ -1,4 +1,4 @@
-.WvWTimers-widget{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#333;background-color:#fff}
+.WvWTimers-widget{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#333;background-color:#fff;padding:0;max-width:670px;}
 
 .WvWTimers-widget a:focus{outline:0}
 .WvWTimers-widget a:hover, .WvWTimers-widget a:active{outline:0}

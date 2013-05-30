@@ -308,9 +308,9 @@ if ($(".WvWTimers-widget").attr("mode") > "0")
 	"<th>Time</th>"+
 	"</tr>"+
 	"</table>"+
-	"<span style='text-align: right; font-size: 0.7em; display: block;'>By <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>"+
 	"</div>");
 }
+$(".WvWTimers-widget").append("<span style='text-align: right; font-size: 0.7em; display: block;'>By <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>");
 
 viewing_server = $(".WvWTimers-widget").attr("server-id");
 console.log("viewing_server: "+viewing_server);
