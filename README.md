@@ -34,7 +34,9 @@ There are two parameters you may want to set in the widget.
 
 The first one is **server-id**. This is the id of the server in the match you want information from. If you don't know the id of your server, go to https://api.guildwars2.com/v1/world_names.json find your server and copy its id.
 
-The second one is **mode**. It can have three values:
+The second one is **mode**. It can be set to three values:
  * *"0"* The widget will only show the scores and the charts of the match.
  * *"1"* The widget will show both, the scores and the charts, and the capture timers.
  * *"2"* The widget will only show the capture timers.
+
+Finally you can set the width inside the style attribute. The minimum recommended is *400px*.
