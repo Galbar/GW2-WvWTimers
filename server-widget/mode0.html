@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guild Wars 2 API Test</title>
+<script type='text/javascript' src='jquery-1.9.1.min.js' ></script>
+<style>
+body{
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size:14px;
+}
+.nav{
+	margin-bottom: 10px;
+	border-bottom: solid 1px #CCC;
+	height: 28px;
+	text-align: center;
+}
+.nav .tab , .nav .tab:visited{
+	margin-right: 5px;
+	text-decoration: none;
+	color: #333;
+	padding: 10px;
+}
+.nav .tab:hover{
+	background-color: #CCC;
+}
+.nav .active{
+	border: solid 1px #CCC;
+	border-bottom: solid 5px #FFF;
+}
+.nav .active:hover{
+	background-color: #FFF;
+}
+</style>
+</head>
+<body>
+<div style="width: 800px; margin: auto;">
+<h1 style="text-align: center;">Baruch Bay [ES]</h1>
+<p>This example is showing information of the match the server Baruch Bay [ES] is in.</p>
+<p>Choose a widget mode to preview:<p>
+<div class="nav"><a class="tab active" href="#">Mode 0</a><a class="tab" href="index.html">Mode 1</a><a class="tab" href="mode2.html">Mode 2</a></div>
+<!-- GW2-WvWTimers Widget -->
+<div class="WvWTimers-widget" server-id="2301" mode="0" style="overfolw: auto;margin:auto;"></div>
+<link href='wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
+<script type='text/javascript' src='wvwtimers-widget.js'></script>
+<!-- End of widget -->
+<div>Some text after the widget</div>
+<script type="text/javascript">
+
+</script>
+</div>
+</body>
+</html>
