@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Guild Wars 2 API Test</title>
-<script type='text/javascript' src='jquery-1.9.1.min.js' ></script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+<script type='text/javascript' src='js/jquery-1.9.1.min.js' ></script>
 <meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1">
+<link href='css/bootstrap.min.css' rel='stylesheet' media='screen'></link>
+<script type='text/javascript' src='js/bootstrap.min.js'></script>
 
 </head>
 <body>
-
-<!-- GW2-WvWTimers Widget -->
+    <div class="navbar">
+    <div class="navbar-inner" style="padding-right:0;">
+    <a class="brand" href="#">WvW Timers</a>
+    <ul class="nav pull-right" style="margin-right:0px;">
+	    <li class="divider-vertical"></li>
+	    <li><a style="font-size:30px;" href="config.html">⚙</a></li>
+    </ul>
+    </div>
+    </div>
 <div class="WvWTimers-widget" server-id="2301" mode="1" style="overfolw: auto;margin:auto;"></div>
-<link href='wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
-<script type='text/javascript' src='wvwtimers-widget-mobile.js'></script>
-<!-- End of widget -->
+<link href='css/wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+  if(typeof(Storage)!="undefined")
+  {
+    if(localStorage.server_id == undefined)
+      window.location = "config.html";
+    else
+      $(".WvWTimers-widget").attr("server-id", localStorage.server_id);
+  }
+  else
+  {
+    alert("Sorry! No web storage support..");
+  }
+});
+</script>
+<script type='text/javascript' src='js/wvwtimers-widget-mobile.js'></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Guild Wars 2 API Test</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+<script type='text/javascript' src='js/jquery-1.9.1.min.js' ></script>
+<meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1">
+<link href='css/bootstrap.min.css' rel='stylesheet' media='screen'></link>
+<script type='text/javascript' src='js/bootstrap.min.js'></script>
+
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-inner" style="padding-left:0;padding-right:0;">
+  <ul class="nav pull-left">
+    <li><a href="index.html"><i class=" icon-chevron-left" style="font-size:30px;"></i></a></li>
+    <li class="divider-vertical"></li>
+  </ul>	
+  <a class="brand" href="#">Settings</a>
+  </div>
+</div>
+<div class="span4 input-prepend input-append" style="text-align: center;">
+  <span class="add-on">Server id:</span>
+  <input class="span2" id="appendedInputButton" type="text">
+  <button id="btn-set" class="btn" type="button">Set</button>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#btn-set").click(function(){
+    if(typeof(Storage)!="undefined")
+    {
+      localStorage.server_id = $("#appendedInputButton").val();
+      alert("Set!");
+      window.location = "index.html";
+    }
+    else
+    {
+     alert("Sorry! No web storage support..");
+    }
+  });
+});
+</script>
+</body>
+</html>
