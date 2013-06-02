@@ -26,6 +26,10 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
+  if(localStorage.server_id != undefined)
+  {
+    $("#appendedInputButton").val(localStorage.server_id);
+  }
   $("#btn-set").click(function(){
     if(typeof(Storage)!="undefined")
     {

@@ -175,3 +175,21 @@
 {
 	background-image: url("../img/camp.png");
 }
+
+.gear
+{
+	display: inline-block;
+	margin-top: 1px;
+	height: 15px;
+	width: 15px;
+	padding: 8px;
+	line-height: 30px;
+	background: no-repeat center;
+	background-image: url("../img/gear.png");
+	background-position: -44px;
+}
+
+.gear:hover
+{
+	background-position: 0px;
+}
