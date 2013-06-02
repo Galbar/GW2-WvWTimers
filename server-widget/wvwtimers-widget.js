@@ -340,17 +340,17 @@ console.log("viewing_server: "+viewing_server);
 					if ($(".WvWTimers-widget").attr("mode") < "2")
 					{
 						$("#WvW-widget-content").append(
-							"<tr><td><strong>"+
+							"<tr><td style='min-width:150px;'>"+
 							"<span class='GreenTeamColor' id='"+matches[i].green_world_id+"'>"+ getWorldName(matches[i].green_world_id, world_names) +"</span><br>"+
 							"<span class='BlueTeamColor' id='"+matches[i].blue_world_id+"'>"+ getWorldName(matches[i].blue_world_id, world_names) +"</span><br>"+
 							"<span class='RedTeamColor' id='"+matches[i].red_world_id+"'>"+ getWorldName(matches[i].red_world_id, world_names) +"</span><br>"+
-							"</strong></td>"+
-							"<td style='text-align:right;'><strong>"+
+							"</td>"+
+							"<td style='text-align:right;'>"+
 							"<span id='id"+i+"team2'></span><br>"+
 							"<span id='id"+i+"team1'></span><br>"+
 							"<span id='id"+i+"team0'></span><br>"+
-							"</strong></td>"+
-							"<td id='id"+i+"bars' style='min-width:200px;'>"+
+							"</td>"+
+							"<td id='id"+i+"bars' style='min-width:120px;'>"+
 							"<div class='score-bar progress progress-success'>"+
 							"<div id='id"+i+"barteam2' class='bar' style='width: 0%'></div>"+
 							"</div>"+
