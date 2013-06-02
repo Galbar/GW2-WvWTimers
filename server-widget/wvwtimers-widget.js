@@ -350,7 +350,7 @@ console.log("viewing_server: "+viewing_server);
 							"<span id='id"+i+"team1'></span><br>"+
 							"<span id='id"+i+"team0'></span><br>"+
 							"</td>"+
-							"<td id='id"+i+"bars' style='min-width:120px;'>"+
+							"<td id='id"+i+"bars' style='min-width:100px;'>"+
 							"<div class='score-bar progress progress-success'>"+
 							"<div id='id"+i+"barteam2' class='bar' style='width: 0%'></div>"+
 							"</div>"+
