@@ -188,13 +188,17 @@ function getMatchCallBack(i)
 				{
 					if(status.maps[k].objectives[j].owner != hist_status.maps[k].objectives[j].owner)
 					{
+						if (objectives[status.maps[k].objectives[j].id][2] != 0)
+						{
+							$("#entry"+status.maps[k].objectives[j].id).remove();
+						}
 						$("#log").append(
 							"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
 							"<td>"+
 							"<i class='objective-"+status.maps[k].objectives[j].owner+" "+getObjectiveType(status.maps[k].objectives[j].id)+"'></i><strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
 							"</td>"+
 							"<td>"+
-							"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'>05 : 00</span>"+
+							"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'></span>"+
 							"</td>"+
 							"</tr>");
 						if (viewing_map != "all" && status.maps[k].type != viewing_map)
