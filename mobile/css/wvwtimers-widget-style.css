@@ -1,29 +1,25 @@
-.WvWTimers-widget{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#333;background-color:#fff;padding:0;max-width:670px;}
+.WvWTimers-widget{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#333;background-color:#fff;padding:0;max-width:670px;width:100%;}
 
 /* Large desktop */
 @media (min-width: 980px) {
-	.WvWTimers-widget{width:670px;}
 	.tabs-mobile{display: none;}
 }
  
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-	.WvWTimers-widget{width:670px;}
+@media (min-width: 670px) and (max-width: 979px) {
 	.tabs-mobile{display: none;}
 }
  
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-	.WvWTimers-widget{width:450px;}
+@media (max-width: 669px) {
 	.tabs-desktop{display:none;}
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	.WvWTimers-widget{width:310px;}
 	.tabs-desktop{display:none;}
 }
-
+.navbar-inner{max-width: 670px;margin:auto;}
 .WvWTimers-widget a:focus{outline:0}
 .WvWTimers-widget a:hover, .WvWTimers-widget a:active{outline:0}
 .WvWTimers-widget a, .WvWTimers-widget a:visited{text-decoration:underline}
