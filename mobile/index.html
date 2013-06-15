@@ -25,7 +25,7 @@
 $(document).ready(function(){
   if(typeof(Storage)!="undefined")
   {
-    if(localStorage.server_id == undefined)
+    if(localStorage.server_id == undefined || localStorage.lang == undefined)
       window.location = "config.html";
     else
       $(".WvWTimers-widget").attr("server-id", localStorage.server_id);
@@ -34,8 +34,9 @@ $(document).ready(function(){
   {
     alert("Sorry! No web storage support..");
   }
+
+  $.getScript("js/wvwtimers-widget-mobile-"+localStorage.lang+".js")
 });
 </script>
-<script type='text/javascript' src='js/wvwtimers-widget-mobile.js'></script>
 </body>
 </html>

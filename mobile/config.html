@@ -19,11 +19,18 @@
   <a class="brand" href="#">Settings</a>
   </div>
 </div>
-<div class="span4 input-prepend input-append" style="text-align: center;">
+<center>
+<div class="btn-group" style="display:block;">
+  <button class="btn" id="lang-en">EN</button>
+  <button class="btn" id="lang-es">ES</button>
+</div>
+</br>
+<div class="span4 input-prepend input-append" style="float: none; display:block;">
   <span class="add-on">Server id:</span>
   <input class="span2" id="appendedInputButton" type="text">
   <button id="btn-set" class="btn" type="button">Set</button>
 </div>
+</center>
 <script type="text/javascript">
 $(document).ready(function(){
   if(localStorage.server_id != undefined)
@@ -41,6 +48,27 @@ $(document).ready(function(){
     {
      alert("Sorry! No web storage support..");
     }
+  });
+  if(localStorage.lang == undefined)
+  {
+    localStorage.lang = "en";
+    $("#lang-en").addClass("active");
+  }
+  else
+  {
+    $("#lang-"+localStorage.lang).addClass("active");
+  }
+  $("#lang-es").click(function()
+  {
+    $("#lang-en").removeClass("active");
+    $("#lang-es").addClass("active");
+    localStorage.lang = "es";
+  });
+  $("#lang-en").click(function()
+  {
+    $("#lang-es").removeClass("active");
+    $("#lang-en").addClass("active");
+    localStorage.lang = "en";
   });
 });
 </script>
