@@ -25,30 +25,63 @@
   <button class="btn" id="lang-es">ES</button>
 </div>
 </br>
-<div class="span4 input-prepend input-append" style="float: none; display:block;">
-  <span class="add-on">Server id:</span>
-  <input class="span2" id="appendedInputButton" type="text">
-  <button id="btn-set" class="btn" type="button">Set</button>
+<div class="WvWTimers-widget">
+    <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#NAserverList">North America</a></li>
+    <li><a href="#EUserverList">European Union</a></li>
+    </ul>
+     
+    <div class="tab-content">
+    <div class="tab-pane active" id="NAserverList"></div>
+    <div class="tab-pane" id="EUserverList"></div>
+    </div>
+     
+    <script>
+    $('#myTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+    })
+    </script>
 </div>
 </center>
 <script type="text/javascript">
+function loadServerList()
+{
+  $.getJSON("https://api.guildwars2.com/v1/world_names.json?lang="+localStorage.lang, function (world_names) {
+    $.each(world_names, function(index, value) {
+      var foo ="";
+      if(value.id < "2000")
+        foo ="#NAserverList";
+      else
+        foo ="#EUserverList";
+
+      var cl = "serverbox";
+      if (localStorage.server_id != undefined && localStorage.server_id == value.id)
+        cl += " active";
+      $(foo).append("<div class='"+cl+"' id='"+value.id+"'>"+value.name+"</div>");
+    });
+
+
+  $(".serverbox").click(function(){
+    $(".serverbox").removeClass("active");
+    $(this).addClass("active");
+    localStorage.server_id = $(this).attr("id");
+  });
+
+  });
+}
+
 $(document).ready(function(){
   if(localStorage.server_id != undefined)
   {
     $("#appendedInputButton").val(localStorage.server_id);
   }
+
   $("#btn-set").click(function(){
-    if(typeof(Storage)!="undefined")
-    {
-      localStorage.server_id = $("#appendedInputButton").val();
-      alert("Set!");
-      window.location = "index.html";
-    }
-    else
-    {
-     alert("Sorry! No web storage support..");
-    }
+    localStorage.server_id = $("#appendedInputButton").val();
+    window.location = "index.html";
   });
+
   if(localStorage.lang == undefined)
   {
     localStorage.lang = "en";
@@ -58,18 +91,28 @@ $(document).ready(function(){
   {
     $("#lang-"+localStorage.lang).addClass("active");
   }
+
   $("#lang-es").click(function()
   {
     $("#lang-en").removeClass("active");
     $("#lang-es").addClass("active");
     localStorage.lang = "es";
+    $("#NAserverList").empty();
+    $("#EUserverList").empty();
+    loadServerList();
   });
+
   $("#lang-en").click(function()
   {
     $("#lang-es").removeClass("active");
     $("#lang-en").addClass("active");
     localStorage.lang = "en";
+    $("#NAserverList").empty();
+    $("#EUserverList").empty();
+    loadServerList();
   });
+
+  loadServerList();
 });
 </script>
 </body>

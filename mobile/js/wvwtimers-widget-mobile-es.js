@@ -241,7 +241,7 @@ function update()
 	$.getJSON("https://api.guildwars2.com/v1/world_names.json?lang=es", function (world_names) {
 		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
 			var matches = aux_matches.wvw_matches;
-			var found = false
+			var found = false;
 			for (i = 0; i < matches.length && !found; ++i) {
 				if (matches[i].green_world_id == viewing_server || matches[i].blue_world_id == viewing_server || matches[i].red_world_id == viewing_server)
 				{
@@ -291,7 +291,7 @@ if ($(".WvWTimers-widget").attr("mode") > "0")
 	"<div style='width:100%; max-width: 670px; margin: auto auto'>"+
 	"<ul class='tabs-mobile nav-maps nav-tabs'>"+
 	"<li class='map-view-all active' id='all'>"+
-	"	<a href='#'>Todos</a>"+
+	"	<a href='#'>Todo</a>"+
 	"</li>"+
 	"<li class='map-view'  id='Center'>"+
 	"	<a href='#' class='NoTeamColor'>Eternos</a>"+

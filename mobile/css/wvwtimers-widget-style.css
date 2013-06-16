@@ -13,11 +13,21 @@
 /* Landscape phone to portrait tablet */
 @media (max-width: 669px) {
 	.tabs-desktop{display:none;}
+	.navbar-inner{
+		-webkit-border-radius:0px;
+		-moz-border-radius:0px;
+		border-radius:0px;
+	}
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	.tabs-desktop{display:none;}
+	.navbar-inner{
+		-webkit-border-radius:0px;
+		-moz-border-radius:0px;
+		border-radius:0px;
+	}
 }
 .navbar-inner{max-width: 670px;margin:auto;}
 .WvWTimers-widget a:focus{outline:0}
@@ -188,4 +198,23 @@
 .gear:hover
 {
 	background-position: 0px;
+}
+
+.serverbox
+{
+	font-weight: bold;
+	padding: 10px 0px;
+	margin: 5px;
+	background-color: #DDD;
+	width: 210px;
+	display: inline-block;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+
+.serverbox.active
+{
+	color: #EEE;
+	background-color: #009900;
 }

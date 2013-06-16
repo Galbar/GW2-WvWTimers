@@ -241,7 +241,7 @@ function update()
 	$.getJSON("https://api.guildwars2.com/v1/world_names.json?", function (world_names) {
 		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
 			var matches = aux_matches.wvw_matches;
-			var found = false
+			var found = false;
 			for (i = 0; i < matches.length && !found; ++i) {
 				if (matches[i].green_world_id == viewing_server || matches[i].blue_world_id == viewing_server || matches[i].red_world_id == viewing_server)
 				{
