@@ -218,3 +218,35 @@
 	color: #EEE;
 	background-color: #009900;
 }
+
+[class^="flag-"],
+[class*=" flag-"]
+{
+	display: inline-block;
+	height: 16px;
+	width: 24px;
+	padding: 0px;
+	margin: 0px 0px;
+	margin-top: 5px;
+	background: no-repeat center;
+}
+
+.flag-es
+{
+	background-image: url("../img/ES.png");
+}
+
+.flag-en
+{
+	background-image: url("../img/EN.png");
+}
+
+.flag-fr
+{
+	background-image: url("../img/FR.png");
+}
+
+.flag-de
+{
+	background-image: url("../img/DE.png");
+}

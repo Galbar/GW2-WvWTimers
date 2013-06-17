@@ -1,55 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Guild Wars 2 API Test</title>
-<meta name="author" content="Alessio Linares" ></meta>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
-<meta http-equiv="content-style-type" content="text/css"></meta>
-<link href="bootstrap.min.css" rel="stylesheet" media="screen" ></link>
-<link href="style.css" rel="stylesheet" media="screen" ></link>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js" ></script>
+<script type='text/javascript' src='js/jquery-1.9.1.min.js' ></script>
+<meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1">
+<link href='css/bootstrap.min.css' rel='stylesheet' media='screen'></link>
+<script type='text/javascript' src='js/bootstrap.min.js'></script>
+<link href='css/wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
 </head>
 <body>
-<ul class="nav nav-tabs">
-<li class="view">
-	<a class="sel" id="timers2-1" href="#2-1">Tier 1</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-2" href="#2-2">Tier 2</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-3" href="#2-3">Tier 3</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-4" href="#2-4">Tier 4</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-5" href="#2-5">Tier 5</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-6" href="#2-6">Tier 6</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-7" href="#2-7">Tier 7</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-8" href="#2-8">Tier 8</a>
-</li>
-<li class="view">
-    <a class="sel" id="timers2-9" href="#2-9">Tier 9</a>
-</li>
-</ul>
-    <div id="view">
+    <div class="navbar">
+    <div class="navbar-inner" style="padding-right:0;">
+    <a class="brand" href="#">WvW Timers</a>
+    <ul class="nav pull-right">
+      <li class="divider-vertical" style="margin-right:3px;"></li>
+      <li><a style="font-size:30px;" href="config.html" class="gear"></a></li>
+    </ul>
     </div>
-    <script type="text/javascript">
-	$(document).ready(function(){
-        $("#view").load("timers.html");
-		$(".view").click(function(){
-			$(".view").removeClass("active");
-			$(this).addClass("active");
-			$("#view").load("timers.html"+$(this).children().attr("href"));
-		});
-	});
-    </script>
+    </div>
+<div class="WvWTimers-widget" server-id="2301" mode="1" style="overfolw: auto;margin:auto;"></div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  if(typeof(Storage)!="undefined")
+  {
+    if(localStorage.server_id == undefined || localStorage.lang == undefined)
+      window.location = "config.html";
+    else
+      $(".WvWTimers-widget").attr("server-id", localStorage.server_id);
+  }
+  else
+  {
+    alert("Sorry! No web storage support..");
+  }
+
+  $.getScript("js/wvwtimers-widget-mobile-"+localStorage.lang+".js")
+});
+</script>
 </body>
 </html>

@@ -20,5 +20,8 @@
     <preference name="fullscreen" value="false" />
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="false" />
+    <preference name="splash-screen-duration" value="500" />
+    <preference name="permissions" value="none"/>
+    <icon src="icon.png" />
 
 </widget>

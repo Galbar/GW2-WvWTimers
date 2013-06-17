@@ -21,8 +21,10 @@
 </div>
 <center>
 <div class="btn-group" style="display:block;">
-  <button class="btn" id="lang-en">EN</button>
-  <button class="btn" id="lang-es">ES</button>
+  <button class="btn" id="lang-en"><i class="flag-en"></i></button>
+  <button class="btn" id="lang-es"><i class="flag-es"></i></button>
+  <button class="btn" id="lang-fr"><i class="flag-fr"></i></button>
+  <button class="btn" id="lang-de"><i class="flag-de"></i></button>
 </div>
 </br>
 <div class="WvWTimers-widget">
@@ -111,11 +113,25 @@ $(document).ready(function(){
       $("#textTabEU").text("European Union");
       $(".brand").text("Settings");
     }
+    else if (localStorage.lang == "fr")
+    {
+      $("#textTabNA").text("Amérique du Nord");
+      $("#textTabEU").text("Union européenne");
+      $(".brand").text("Réglages");
+    }
+    else if (localStorage.lang == "de")
+    {
+      $("#textTabNA").text("Nordamerika");
+      $("#textTabEU").text("Europäische Union");
+      $(".brand").text("Einstellungen");
+    }
   }
 
   $("#lang-es").click(function()
   {
     $("#lang-en").removeClass("active");
+    $("#lang-fr").removeClass("active");
+    $("#lang-de").removeClass("active");
     $("#lang-es").addClass("active");
     localStorage.lang = "es";
     $("#NAserverList").empty();
@@ -129,6 +145,8 @@ $(document).ready(function(){
   $("#lang-en").click(function()
   {
     $("#lang-es").removeClass("active");
+    $("#lang-fr").removeClass("active");
+    $("#lang-de").removeClass("active");
     $("#lang-en").addClass("active");
     localStorage.lang = "en";
     $("#NAserverList").empty();
@@ -136,6 +154,36 @@ $(document).ready(function(){
     $("#textTabNA").text("North America");
     $("#textTabEU").text("European Union");
     $(".brand").text("Settings");
+    loadServerList();
+  });
+
+    $("#lang-fr").click(function()
+  {
+    $("#lang-en").removeClass("active");
+    $("#lang-es").removeClass("active");
+    $("#lang-de").removeClass("active");
+    $("#lang-fr").addClass("active");
+    localStorage.lang = "fr";
+    $("#NAserverList").empty();
+    $("#EUserverList").empty();
+    $("#textTabNA").text("Amérique du Nord");
+    $("#textTabEU").text("Union européenne");
+    $(".brand").text("Réglages");
+    loadServerList();
+  });
+
+    $("#lang-de").click(function()
+  {
+    $("#lang-en").removeClass("active");
+    $("#lang-fr").removeClass("active");
+    $("#lang-es").removeClass("active");
+    $("#lang-de").addClass("active");
+    localStorage.lang = "de";
+    $("#NAserverList").empty();
+    $("#EUserverList").empty();
+    $("#textTabNA").text("Nordamerika");
+    $("#textTabEU").text("Europäische Union");
+    $(".brand").text("Einstellungen");
     loadServerList();
   });
 

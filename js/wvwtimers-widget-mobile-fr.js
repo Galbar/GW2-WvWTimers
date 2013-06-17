@@ -4,67 +4,67 @@ var viewing_server = "";
 var viewing_map = "all";
 var hist_status = new Array();
 var objectives = new Array();
-			objectives[ 1 ] = ["Overlook",25, 0];
-			objectives[ 2 ] = ["Valley",25, 0];
-			objectives[ 3 ] = ["Lowlands",25, 0];
-			objectives[ 4 ] = ["Golanta Clearing",5, 0];
-			objectives[ 5 ] = ["Pangloss Rise",5, 0];
-			objectives[ 6 ] = ["Speldan Clearcut",5, 0];
-			objectives[ 7 ] = ["Danelon Passage",5, 0];
-			objectives[ 8 ] = ["Umberglade Woods",5, 0];
-			objectives[ 9 ] = ["Stonemist Castle",35, 0];
-			objectives[ 10 ] = ["Rogue's Quarry",5, 0];
-			objectives[ 11 ] = ["Aldon's Ledge",10, 0];
-			objectives[ 12 ] = ["Wildcreek Run",10, 0];
-			objectives[ 13 ] = ["Jerrifer's Slough",10, 0];
-			objectives[ 14 ] = ["Klovan Gully",10, 0];
-			objectives[ 15 ] = ["Langor Gulch",10, 0];
-			objectives[ 16 ] = ["Quentin Lake",10, 0];
-			objectives[ 17 ] = ["Mendon's Gap",10, 0];
-			objectives[ 18 ] = ["Anzalias Pass",10, 0];
-			objectives[ 19 ] = ["Ogrewatch Cut",10, 0];
-			objectives[ 20 ] = ["Veloka Slope",10, 0];
-			objectives[ 21 ] = ["Durios Gulch",10, 0];
-			objectives[ 22 ] = ["Bravost Escarpment",10, 0];
-			objectives[ 23 ] = ["Garrison",25, 0];
-			objectives[ 24 ] = ["Champion's demense",5, 0];
-			objectives[ 25 ] = ["Redbriar",10, 0];
-			objectives[ 26 ] = ["Greenlake",10, 0];
-			objectives[ 27 ] = ["Ascension Bay",25, 0];
-			objectives[ 28 ] = ["Dawn's Eyrie",10, 0];
-			objectives[ 29 ] = ["The Spiritholme",5, 0];
-			objectives[ 30 ] = ["Woodhaven",10, 0];
-			objectives[ 31 ] = ["Askalion Hills",25, 0];
-			objectives[ 32 ] = ["Etheron Hills",25, 0];
-			objectives[ 33 ] = ["Dreaming Bay",25, 0];
-			objectives[ 34 ] = ["Victors's Lodge",5, 0];
-			objectives[ 35 ] = ["Greenbriar",10, 0];
-			objectives[ 36 ] = ["Bluelake",10, 0];
-			objectives[ 37 ] = ["Garrison",25, 0];
-			objectives[ 38 ] = ["Longview",10, 0];
-			objectives[ 39 ] = ["The Godsword",5, 0];
-			objectives[ 40 ] = ["Cliffside",10, 0];
-			objectives[ 41 ] = ["Shadaran Hills",25, 0];
-			objectives[ 42 ] = ["Redlake",10, 0];
-			objectives[ 43 ] = ["Hero's Lodge",5, 0];
-			objectives[ 44 ] = ["Dreadfall Bay",25, 0];
-			objectives[ 45 ] = ["Bluebriar",10, 0];
-			objectives[ 46 ] = ["Garrison",25, 0];
-			objectives[ 47 ] = ["Sunnyhill",10, 0];
-			objectives[ 48 ] = ["Faithleap",5, 0];
-			objectives[ 49 ] = ["Bluevale Refuge",5, 0];
-			objectives[ 50 ] = ["Bluewater Lowlands",5, 0];
-			objectives[ 51 ] = ["Astralholme",5, 0];
-			objectives[ 52 ] = ["Arah's Hope",5, 0];
-			objectives[ 53 ] = ["Greenvale Refuge",5, 0];
-			objectives[ 54 ] = ["Foghaven",5, 0];
-			objectives[ 55 ] = ["Redwater Lowlands",5, 0];
-			objectives[ 56 ] = ["The Titanpaw",5, 0];
-			objectives[ 57 ] = ["Cragtop",10, 0];
-			objectives[ 58 ] = ["Godslore",5, 0];
-			objectives[ 59 ] = ["Redvale Refuge",5, 0];
-			objectives[ 60 ] = ["Stargrove",5, 0];
-			objectives[ 61 ] = ["Greenwater Lowlands",5, 0];
+			objectives[ 1 ] = ["Belvédère",25, 0]; 
+			objectives[ 2 ] = ["Vallée",25, 0]; 
+			objectives[ 3 ] = ["Basses terres",25, 0]; 
+			objectives[ 4 ] = ["Clairière de Golanta",5, 0]; 
+			objectives[ 5 ] = ["Montée de Pangloss",5, 0]; 
+			objectives[ 6 ] = ["Forêt rasée de Speldan",5, 0]; 
+			objectives[ 7 ] = ["Passage Danelon",5, 0]; 
+			objectives[ 8 ] = ["Bois d'Ombreclair",5, 0]; 
+			objectives[ 9 ] = ["Château Brumepierre",35, 0]; 
+			objectives[ 10 ] = ["Carrière des voleurs",5, 0]; 
+			objectives[ 11 ] = ["Corniche d'Aldon",10, 0]; 
+			objectives[ 12 ] = ["Piste du Ruisseau sauvage",10, 0]; 
+			objectives[ 13 ] = ["Bourbier de Jerrifer",10, 0]; 
+			objectives[ 14 ] = ["Petit ravin de Klovan",10, 0]; 
+			objectives[ 15 ] = ["Ravin de Langor",10, 0]; 
+			objectives[ 16 ] = ["Lac Quentin",10, 0]; 
+			objectives[ 17 ] = ["Faille de Mendon",10, 0]; 
+			objectives[ 18 ] = ["Col d'Anzalias",10, 0]; 
+			objectives[ 19 ] = ["Percée de Gardogre",10, 0]; 
+			objectives[ 20 ] = ["Flanc de Veloka",10, 0]; 
+			objectives[ 21 ] = ["Ravin de Durios",10, 0]; 
+			objectives[ 22 ] = ["Falaise de Bravost",10, 0]; 
+			objectives[ 23 ] = ["Garnison",25, 0]; 
+			objectives[ 24 ] = ["Fief du champion",5, 0]; 
+			objectives[ 25 ] = ["Bruyerouge",10, 0]; 
+			objectives[ 26 ] = ["Lac Vert",10, 0]; 
+			objectives[ 27 ] = ["Baie de l'Ascension",25, 0]; 
+			objectives[ 28 ] = ["Promontoire de l'aube",10, 0]; 
+			objectives[ 29 ] = ["L'antre des esprits",5, 0]; 
+			objectives[ 30 ] = ["Gentesylve",10, 0]; 
+			objectives[ 31 ] = ["Collines d'Askalion",25, 0]; 
+			objectives[ 32 ] = ["Collines d'Etheron",25, 0]; 
+			objectives[ 33 ] = ["Baie des rêves",25, 0]; 
+			objectives[ 34 ] = ["Pavillon du vainqueur",5, 0]; 
+			objectives[ 35 ] = ["Vertebranche",10, 0]; 
+			objectives[ 36 ] = ["Lac bleu",10, 0]; 
+			objectives[ 37 ] = ["Garnison",25, 0]; 
+			objectives[ 38 ] = ["Longuevue",10, 0]; 
+			objectives[ 39 ] = ["L'Epée divine",5, 0]; 
+			objectives[ 40 ] = ["Flanc de falaise",10, 0]; 
+			objectives[ 41 ] = ["Collines de Shadaran",25, 0]; 
+			objectives[ 42 ] = ["Rougelac",10, 0]; 
+			objectives[ 43 ] = ["Pavillon du Héros",5, 0]; 
+			objectives[ 44 ] = ["Baie du Noir déclin",25, 0]; 
+			objectives[ 45 ] = ["Bruyazur",10, 0]; 
+			objectives[ 46 ] = ["Garnison",25, 0]; 
+			objectives[ 47 ] = ["Colline ensoleillée",10, 0]; 
+			objectives[ 48 ] = ["Ferveur",5, 0]; 
+			objectives[ 49 ] = ["Refuge de bleuval",5, 0]; 
+			objectives[ 50 ] = ["Basses terres d'Eau-Azur",5, 0]; 
+			objectives[ 51 ] = ["Astralholme",5, 0]; 
+			objectives[ 52 ] = ["Espoir d'Arah",5, 0]; 
+			objectives[ 53 ] = ["Refuge de Valvert",5, 0]; 
+			objectives[ 54 ] = ["Havre gris",5, 0]; 
+			objectives[ 55 ] = ["Basses terres de Rubicon",5, 0]; 
+			objectives[ 56 ] = ["Bras du titan",5, 0]; 
+			objectives[ 57 ] = ["Sommet de l'escarpement",10, 0]; 
+			objectives[ 58 ] = ["Divination",5, 0]; 
+			objectives[ 59 ] = ["Refuge de Valrouge",5, 0]; 
+			objectives[ 60 ] = ["Bosquet stellaire",5, 0]; 
+			objectives[ 61 ] = ["Basses terres d'Eau-Verdoyante",5, 0]; 
 
 function getWorldName(id, world_names) {
 	var i = 0;
@@ -188,13 +188,17 @@ function getMatchCallBack(i)
 				{
 					if(status.maps[k].objectives[j].owner != hist_status.maps[k].objectives[j].owner)
 					{
+						if (objectives[status.maps[k].objectives[j].id][2] != 0)
+						{
+							$("#entry"+status.maps[k].objectives[j].id).remove();
+						}
 						$("#log").append(
 							"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
 							"<td>"+
 							"<i class='objective-"+status.maps[k].objectives[j].owner+" "+getObjectiveType(status.maps[k].objectives[j].id)+"'></i><strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
 							"</td>"+
 							"<td>"+
-							"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'>05 : 00</span>"+
+							"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'></span>"+
 							"</td>"+
 							"</tr>");
 						if (viewing_map != "all" && status.maps[k].type != viewing_map)
@@ -234,10 +238,10 @@ function getMatchCallBack(i)
 
 function update()
 {
-	$.getJSON("https://api.guildwars2.com/v1/world_names.json?", function (world_names) {
+	$.getJSON("https://api.guildwars2.com/v1/world_names.json?lang=fr", function (world_names) {
 		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
 			var matches = aux_matches.wvw_matches;
-			var found = false
+			var found = false;
 			for (i = 0; i < matches.length && !found; ++i) {
 				if (matches[i].green_world_id == viewing_server || matches[i].blue_world_id == viewing_server || matches[i].red_world_id == viewing_server)
 				{
@@ -285,32 +289,49 @@ if ($(".WvWTimers-widget").attr("mode") > "0")
 {
 	$(".WvWTimers-widget").append(
 	"<div style='width:100%; max-width: 670px; margin: auto auto'>"+
-	"<ul class='nav-maps nav-tabs'>"+
+	"<ul class='tabs-mobile nav-maps nav-tabs'>"+
 	"<li class='map-view-all active' id='all'>"+
-	"	<a href='#'>All maps</a>"+
+	"	<a href='#'>Tous</a>"+
 	"</li>"+
 	"<li class='map-view'  id='Center'>"+
-	"	<a href='#' class='NoTeamColor'>Eternal Battlegrounds</a>"+
+	"	<a href='#' class='NoTeamColor'>Éternels</a>"+
 	"</li>"+
 	"<li class='map-view'  id='GreenHome'>"+
-	"	<a href='#' class='GreenTeamColor'>Green Borderlands</a>"+
+	"	<a href='#' class='GreenTeamColor'>Vert</a>"+
 	"</li>"+
 	"<li class='map-view'  id='BlueHome'>"+
-	"	<a href='#' class='BlueTeamColor'>Blue Borderlands</a>"+
+	"	<a href='#' class='BlueTeamColor'>Bleu</a>"+
 	"</li>"+
 	"<li class='map-view'  id='RedHome'>"+
-	"	<a href='#' class='RedTeamColor'>Red Borderlands</a>"+
+	"	<a href='#' class='RedTeamColor'>Rouge</a>"+
+	"</li>"+
+	"</ul>"+
+	"<ul class='tabs-desktop nav-maps nav-tabs'>"+
+	"<li class='map-view-all active' id='all'>"+
+	"	<a href='#'>Tous</a>"+
+	"</li>"+
+	"<li class='map-view'  id='Center'>"+
+	"	<a href='#' class='NoTeamColor'>Champs de Bataille Éternels</a>"+
+	"</li>"+
+	"<li class='map-view'  id='GreenHome'>"+
+	"	<a href='#' class='GreenTeamColor'>Frontières Verts</a>"+
+	"</li>"+
+	"<li class='map-view'  id='BlueHome'>"+
+	"	<a href='#' class='BlueTeamColor'>Frontières Bleu</a>"+
+	"</li>"+
+	"<li class='map-view'  id='RedHome'>"+
+	"	<a href='#' class='RedTeamColor'>Frontières Rouge</a>"+
 	"</li>"+
 	"</ul>"+
 	"<table id='log' class='table'>"+
 	"<tr id='loghead'>"+
-	"<th>Objective</th>"+
-	"<th>Time</th>"+
+	"<th>Objetivo</th>"+
+	"<th>Tiempo</th>"+
 	"</tr>"+
 	"</table>"+
 	"</div>");
 }
-$(".WvWTimers-widget").append("<span style='text-align: right; font-size: 0.7em; display: block;'>By <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>");
+$(".WvWTimers-widget").append("<span style='text-align: right; font-size: 0.7em; display: block;'>Par <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>");
 
 viewing_server = $(".WvWTimers-widget").attr("server-id");
 console.log("viewing_server: "+viewing_server);
@@ -329,7 +350,7 @@ console.log("viewing_server: "+viewing_server);
 		viewing_map = $(this).attr("id");
 	});
 	console.log("getting ready");
-	$.getJSON("https://api.guildwars2.com/v1/world_names.json?", function (world_names) {
+	$.getJSON("https://api.guildwars2.com/v1/world_names.json?lang=fr", function (world_names) {
 		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
 			var matches = aux_matches.wvw_matches;
 			var found = false;
@@ -350,7 +371,7 @@ console.log("viewing_server: "+viewing_server);
 							"<span id='id"+i+"team1'></span><br>"+
 							"<span id='id"+i+"team0'></span><br>"+
 							"</td>"+
-							"<td id='id"+i+"bars' style='min-width:100px;'>"+
+							"<td id='id"+i+"bars' style='min-width:100px;width:100%;'>"+
 							"<div class='score-bar progress progress-success'>"+
 							"<div id='id"+i+"barteam2' class='bar' style='width: 0%'></div>"+
 							"</div>"+
