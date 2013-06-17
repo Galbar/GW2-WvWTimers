@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "io.galbar.wvwtimers"
+        versionCode="1" 
+        version   = "1.0.0">
+
+    <name>WvW Timers</name>
+
+    <description>
+        An aplication that shows the invulnerability buff time for recently captured structures in World vs World (Guild Wars 2).
+    </description>
+
+    <author href="https://github.com/Galbar/" email="alessio.linares2@gmail.com">
+        Alessio Linares
+    </author>
+
+    <preference name="target-device" value="universal" />
+    <preference name="orientation" value="default" />
+    <preference name="fullscreen" value="false" />
+    <preference name="detect-data-types" value="false" />
+    <preference name="exit-on-suspend" value="false" />
+
+</widget>

@@ -27,8 +27,8 @@
 </br>
 <div class="WvWTimers-widget">
     <ul class="nav nav-tabs" id="myTab">
-    <li class="active"><a href="#NAserverList">North America</a></li>
-    <li><a href="#EUserverList">European Union</a></li>
+    <li class="active"><a id="textTabNA" href="#NAserverList"></a></li>
+    <li><a id="textTabEU" href="#EUserverList"></a></li>
     </ul>
      
     <div class="tab-content">
@@ -74,7 +74,14 @@ function loadServerList()
 $(document).ready(function(){
   if(localStorage.server_id != undefined)
   {
-    $("#appendedInputButton").val(localStorage.server_id);
+    if(localStorage.server_id < "2000")
+    {
+      $('#myTab a:first').tab('show');
+    }
+    else
+    {
+      $('#myTab a:last').tab('show');
+    }
   }
 
   $("#btn-set").click(function(){
@@ -86,10 +93,24 @@ $(document).ready(function(){
   {
     localStorage.lang = "en";
     $("#lang-en").addClass("active");
+    $("#textTabNA").text("North America");
+    $("#textTabEU").text("European Union");
   }
   else
   {
     $("#lang-"+localStorage.lang).addClass("active");
+    if(localStorage.lang == "es")
+    {
+      $("#textTabNA").text("Norte America");
+      $("#textTabEU").text("Unión Europea");
+      $(".brand").text("Configuración");
+    }
+    else if (localStorage.lang == "en")
+    {
+      $("#textTabNA").text("North America");
+      $("#textTabEU").text("European Union");
+      $(".brand").text("Settings");
+    }
   }
 
   $("#lang-es").click(function()
@@ -99,6 +120,9 @@ $(document).ready(function(){
     localStorage.lang = "es";
     $("#NAserverList").empty();
     $("#EUserverList").empty();
+    $("#textTabNA").text("Norte America");
+    $("#textTabEU").text("Unión Europea");
+    $(".brand").text("Configuración");
     loadServerList();
   });
 
@@ -109,6 +133,9 @@ $(document).ready(function(){
     localStorage.lang = "en";
     $("#NAserverList").empty();
     $("#EUserverList").empty();
+    $("#textTabNA").text("North America");
+    $("#textTabEU").text("European Union");
+    $(".brand").text("Settings");
     loadServerList();
   });
 
