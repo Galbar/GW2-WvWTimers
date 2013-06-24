@@ -20,8 +20,9 @@
     <preference name="fullscreen" value="false" />
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="false" />
-    <preference name="splash-screen-duration" value="500" />
+    <preference name="splash-screen-duration" value="3000" />
     <preference name="permissions" value="none"/>
     <icon src="icon.png" />
+    <gap:splash src="icon-2.png" />
 
 </widget>
