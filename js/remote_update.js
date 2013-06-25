@@ -22,7 +22,7 @@ function requestUpdate () {
 		"</div>"+
 		"<div class='modal-footer'>"+
 		"<button class='btn' id='updateAlertClose' data-dismiss='modal' aria-hidden='true'></button> "+
-		"<a href='http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc'><button id='updateAlertAccept' class='btn btn-primary'></button></a>"+
+		"<a id='updateAlertAccept' class='btn btn-primary' href='http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc'></a>"+
 		"</div>"+
 		"</div>");
 
