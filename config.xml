@@ -24,8 +24,6 @@
     <icon src="icon.png" />
     <gap:splash src="icon-2.png"/>
 
-    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
-    <plugin name="InAppBrowser" value="CDVInAppBrowser" />
     <plugin name="InAppBrowser" />
 
 </widget>
