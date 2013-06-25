@@ -75,6 +75,32 @@ function requestUpdate () {
 
     $("#updateAlertAccept").click(function(){
     	window.open('https://build.phonegap.com/apps/440645/share', '_blank');
+
+    	// !! Assumes filePath is a valid path on the device
+
+		var fileTransfer = new FileTransfer();
+		var uri = encodeURI("http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc");
+
+		fileTransfer.download(
+		    uri,
+		    "/sdcard/Download/WvWTimers-Update.apk",
+		    function(entry) {
+		        console.log("download complete: " + entry.fullPath);
+		    },
+		    function(error) {
+		        console.log("download error source " + error.source);
+		        console.log("download error target " + error.target);
+		        console.log("upload error code" + error.code);
+		    },
+		    false,
+		    {
+		        headers: {
+		            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+		        }
+		    }
+		);
+
+
     	$('#updateAlert').modal('hide');
 
     })
