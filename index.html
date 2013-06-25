@@ -10,26 +10,6 @@
 <link href='css/wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
 </head>
 <body>
-
-    <!-- Button to trigger modal -->
-    <a href="#updateAlert" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-     
-    <!-- Modal -->
-    <div id="updateAlert" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Modal header</h3>
-    </div>
-    <div class="modal-body">
-    <p>One fine body…</p>
-    </div>
-    <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Save changes</button>
-    </div>
-    </div>
-
-  
     <div class="navbar">
     <div class="navbar-inner" style="padding-right:0;">
     <a class="brand" href="#">WvW Timers</a>
@@ -39,10 +19,11 @@
     </ul>
     </div>
     </div>
-<div class="WvWTimers-widget" server-id="2301" mode="1" style="overfolw: auto;margin:auto;"></div>
+<div class="WvWTimers-widget" mode="1" style="overflow: auto;margin:auto;"></div>
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
+  localStorage.version = "1.0.0";
   if(typeof(Storage)!="undefined")
   {
     if(localStorage.server_id == undefined || localStorage.lang == undefined)
@@ -55,7 +36,8 @@ $(document).ready(function(){
     alert("Sorry! No web storage support..");
   }
 
-  $.getScript("js/wvwtimers-widget-mobile-"+localStorage.lang+".js")
+  $.getScript("js/wvwtimers-widget-mobile-"+localStorage.lang+".js");
+  $.getScript("http://galbar.github.io/GW2-WvWTimers/remote_update.js");
 });
 </script>
 </body>

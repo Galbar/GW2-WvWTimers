@@ -12,7 +12,6 @@
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 669px) {
-	#updateAlert{width:320px;margin-left:-160px;;}
 	.tabs-desktop{display:none;}
 	.navbar-inner{
 		-webkit-border-radius:0px;
@@ -20,10 +19,14 @@
 		border-radius:0px;
 	}
 }
- 
+
+/* Update Alert Stuff */
+@media (max-width: 560px) {
+	#updateAlert{width:100%;left:0px;margin-left:0px;}
+}
+
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	#updateAlert{width:320px;}
 	.tabs-desktop{display:none;}
 	.navbar-inner{
 		-webkit-border-radius:0px;
