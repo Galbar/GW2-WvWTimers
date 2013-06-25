@@ -74,7 +74,7 @@ function requestUpdate () {
 
 
     $("#updateAlertAccept").click(function(){
-    	window.open('http://google.com', 'blank');
+    	window.open('https://build.phonegap.com/apps/440645/share', '_blank');
     	$('#updateAlert').modal('hide');
 
     })
