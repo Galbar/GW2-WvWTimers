@@ -74,7 +74,7 @@ function requestUpdate () {
 
 
     $("#updateAlertAccept").click(function(){
-    	window.open('http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc', '_self');
+    	window.open('http://google.com', '_self');
     	$('#updateAlert').modal('hide');
 
     })
