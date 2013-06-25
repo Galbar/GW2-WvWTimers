@@ -1,5 +1,5 @@
 
-var LatestVersion = "1.0.4";
+var LatestVersion = "1.0.5";
 console.log("Remote update");
 if (localStorage.version == undefined)
 {
@@ -74,7 +74,7 @@ function requestUpdate () {
 
 
     $("#updateAlertAccept").click(function(){
-    	window.open('http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc', '_blank', 'location=yes');
+    	$("body").append("<iframe height='0' width='0' src='http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc'></iframe>");
     	$('#updateAlert').modal('hide');
 
     })
