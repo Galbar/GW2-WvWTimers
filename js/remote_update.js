@@ -74,7 +74,6 @@ function requestUpdate () {
 
 
     $("#updateAlertAccept").click(function(){
-    	window.open('https://build.phonegap.com/apps/440645/share', '_blank');
 
     	// !! Assumes filePath is a valid path on the device
 
