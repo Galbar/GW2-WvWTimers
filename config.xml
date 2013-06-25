@@ -23,6 +23,6 @@
     <preference name="splash-screen-duration" value="3000" />
     <preference name="permissions" value="none"/>
     <icon src="icon.png" />
-    <gap:splash src="icon-2.png" height="256px" width="256px" />
+    <gap:splash src="icon-2.png" height="256" width="256" />
 
 </widget>
