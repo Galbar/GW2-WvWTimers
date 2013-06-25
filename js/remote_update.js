@@ -1,5 +1,5 @@
 
-var LatestVersion = "1.0.1";
+var LatestVersion = "1.0.2";
 console.log("Remote update");
 if (localStorage.version == undefined)
 {
