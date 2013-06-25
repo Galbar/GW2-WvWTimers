@@ -1,5 +1,5 @@
 
-var LatestVersion = "1.0.2";
+var LatestVersion = "1.0.3";
 console.log("Remote update");
 if (localStorage.version == undefined)
 {
@@ -22,7 +22,7 @@ function requestUpdate () {
 		"</div>"+
 		"<div class='modal-footer'>"+
 		"<button class='btn' id='updateAlertClose' data-dismiss='modal' aria-hidden='true'></button> "+
-		"<a id='updateAlertAccept' class='btn btn-primary' href='http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc'></a>"+
+		"<a id='updateAlertAccept' class='btn btn-primary' href='#'></a>"+
 		"</div>"+
 		"</div>");
 
@@ -70,10 +70,12 @@ function requestUpdate () {
 			"</li>" +
 			"<ul>");
 	}
-
     $('#updateAlert').modal('show');
 
+
     $("#updateAlertAccept").click(function(){
-    	window.location("http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc");
+    	window.open('http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc', '_blank', 'location=yes');
+    	$('#updateAlert').modal('hide');
+
     })
 }

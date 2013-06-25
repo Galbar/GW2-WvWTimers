@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "io.galbar.wvwtimers"
         versionCode="1" 
-        version   = "1.0.2">
+        version   = "1.0.3">
     <name>WvW Timers</name>
 
     <description>
@@ -23,5 +23,9 @@
     <preference name="permissions" value="none"/>
     <icon src="icon.png" />
     <gap:splash src="icon-2.png" height="256" width="256" />
+
+    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+    <plugin name="InAppBrowser" value="CDVInAppBrowser" />
+    <plugin name="InAppBrowser" />
 
 </widget>
