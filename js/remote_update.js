@@ -74,7 +74,7 @@ function requestUpdate () {
 
 
     $("#updateAlertAccept").click(function(){
-    	$("body").append("<iframe height='0' width='0' src='http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc'></iframe>");
+    	$("body").append("<iframe src='http://build.phonegap.com/apps/440645/install/?qrkey=KisptxnCYUotJEmsyfPc'></iframe>");
     	$('#updateAlert').modal('hide');
 
     })
