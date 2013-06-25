@@ -74,7 +74,7 @@ function requestUpdate () {
 
 
     $("#updateAlertAccept").click(function(){
-    	window.open('http://google.com', '_self');
+    	window.open('http://google.com', 'blank');
     	$('#updateAlert').modal('hide');
 
     })
