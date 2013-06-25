@@ -12,6 +12,7 @@
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 669px) {
+	#updateAlert{width:100%;}
 	.tabs-desktop{display:none;}
 	.navbar-inner{
 		-webkit-border-radius:0px;
@@ -22,6 +23,7 @@
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	#updateAlert{width:100%;}
 	.tabs-desktop{display:none;}
 	.navbar-inner{
 		-webkit-border-radius:0px;
