@@ -23,7 +23,5 @@
     <preference name="permissions" value="none"/>
     <icon src="icon.png" />
     <gap:splash src="icon-2.png"/>
-
-    <plugin name="InAppBrowser" />
-
+    
 </widget>
