@@ -20,8 +20,8 @@
     <preference name="detect-data-types" value="false" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="splash-screen-duration" value="3000" />
-    <feature name="http://api.phonegap.com/1.0/file"/>
-    <icon src="icon.png" />
+    <preference name="permissions" value="none"/>
     <gap:splash src="icon-2.png"/>
+    <icon src="icon.png" />
     
 </widget>
