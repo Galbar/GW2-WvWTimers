@@ -234,7 +234,7 @@ function getMatchCallBack()
 			$("#"+"id"+viewing_match+"barteam0").css("width", (status.scores[0]/max_score*100)+"%");
 			$("#"+"id"+viewing_match+"barteam0").html("+"+red);
 		}
- 	};
+	};
 }
 
 function update()
