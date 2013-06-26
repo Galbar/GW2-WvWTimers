@@ -1,5 +1,6 @@
 console.log("Entrando en el script");
 
+var viewing_match = "";
 var viewing_server = "";
 var viewing_map = "all";
 var hist_status = new Array();
