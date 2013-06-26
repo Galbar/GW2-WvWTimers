@@ -64,11 +64,12 @@ function loadServerList()
     });
 
 
-  $(".serverbox").click(function(){
-    $(".serverbox").removeClass("active");
-    $(this).addClass("active");
-    localStorage.server_id = $(this).attr("id");
-  });
+    $(".serverbox").click(function(){
+      $(".serverbox").removeClass("active");
+      $(this).addClass("active");
+      localStorage.server_id = $(this).attr("id");
+      window.location ="index.html";
+    });
 
   });
 }
