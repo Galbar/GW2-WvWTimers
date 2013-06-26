@@ -1,5 +1,6 @@
 console.log("Entrando en el script");
 
+var viewing_match = "";
 var viewing_server = "";
 var viewing_map = "all";
 var hist_status = new Array();
@@ -159,7 +160,7 @@ function getObjectiveType (id)
 	if (objectives[id][1] == 35) return "castle";
 }
 
-function getMatchCallBack(i)
+function getMatchCallBack()
 {
 	return function (status)
 	{
@@ -170,7 +171,7 @@ function getMatchCallBack(i)
 		}
 		if ($(".WvWTimers-widget").attr("mode") < "2")
 		{
-			var str = "id"+i;
+			var str = "id"+viewing_match;
 //			console.log("Actualizando puntuaciones");
 			$("#"+str+"team0").html(status.scores[0]);
 			$("#"+str+"team1").html(status.scores[1]);
@@ -226,31 +227,19 @@ function getMatchCallBack(i)
 		if ($(".WvWTimers-widget").attr("mode") < "2")
 		{
 //			console.log("Actualizando barras");
-			$("#"+"id"+i+"barteam2").css("width", (status.scores[2]/max_score*100)+"%");
-			$("#"+"id"+i+"barteam2").html("+"+green);
-			$("#"+"id"+i+"barteam1").css("width", (status.scores[1]/max_score*100)+"%");
-			$("#"+"id"+i+"barteam1").html("+"+blue);
-			$("#"+"id"+i+"barteam0").css("width", (status.scores[0]/max_score*100)+"%");
-			$("#"+"id"+i+"barteam0").html("+"+red);
+			$("#"+"id"+viewing_match+"barteam2").css("width", (status.scores[2]/max_score*100)+"%");
+			$("#"+"id"+viewing_match+"barteam2").html("+"+green);
+			$("#"+"id"+viewing_match+"barteam1").css("width", (status.scores[1]/max_score*100)+"%");
+			$("#"+"id"+viewing_match+"barteam1").html("+"+blue);
+			$("#"+"id"+viewing_match+"barteam0").css("width", (status.scores[0]/max_score*100)+"%");
+			$("#"+"id"+viewing_match+"barteam0").html("+"+red);
 		}
 	};
 }
 
 function update()
 {
-	$.getJSON("https://api.guildwars2.com/v1/world_names.json?", function (world_names) {
-		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
-			var matches = aux_matches.wvw_matches;
-			var found = false;
-			for (i = 0; i < matches.length && !found; ++i) {
-				if (matches[i].green_world_id == viewing_server || matches[i].blue_world_id == viewing_server || matches[i].red_world_id == viewing_server)
-				{
-					found = true;
-					$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ matches[i].wvw_match_id, getMatchCallBack(i));
-				}
-			}
-		});
-	});	
+	$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ viewing_match, getMatchCallBack());
 }
 
 function updateTimers()
@@ -358,6 +347,7 @@ console.log("viewing_server: "+viewing_server);
 				if (matches[i].green_world_id == viewing_server || matches[i].blue_world_id == viewing_server || matches[i].red_world_id == viewing_server)
 				{
 					found = true;
+					viewing_match = matches[i].wvw_match_id;
 					if ($(".WvWTimers-widget").attr("mode") < "2")
 					{
 						$("#WvW-widget-content").append(
@@ -367,25 +357,25 @@ console.log("viewing_server: "+viewing_server);
 							"<span class='RedTeamColor' id='"+matches[i].red_world_id+"'>"+ getWorldName(matches[i].red_world_id, world_names) +"</span><br>"+
 							"</td>"+
 							"<td style='text-align:right;'>"+
-							"<span id='id"+i+"team2'></span><br>"+
-							"<span id='id"+i+"team1'></span><br>"+
-							"<span id='id"+i+"team0'></span><br>"+
+							"<span id='id"+viewing_match+"team2'></span><br>"+
+							"<span id='id"+viewing_match+"team1'></span><br>"+
+							"<span id='id"+viewing_match+"team0'></span><br>"+
 							"</td>"+
-							"<td id='id"+i+"bars' style='min-width:100px;width:100%;'>"+
+							"<td id='id"+viewing_match+"bars' style='min-width:100px;width:100%;'>"+
 							"<div class='score-bar progress progress-success'>"+
-							"<div id='id"+i+"barteam2' class='bar' style='width: 0%'></div>"+
+							"<div id='id"+viewing_match+"barteam2' class='bar' style='width: 0%'></div>"+
 							"</div>"+
 							"<div class='score-bar progress progress-info'>"+
-							"<div id='id"+i+"barteam1' class='bar' style='width: 0%'></div>"+
+							"<div id='id"+viewing_match+"barteam1' class='bar' style='width: 0%'></div>"+
 							"</div>"+
 							"<div class='score-bar progress progress-danger'>"+
-							"<div id='id"+i+"barteam0' class='bar' style='width: 0%'></div>"+
+							"<div id='id"+viewing_match+"barteam0' class='bar' style='width: 0%'></div>"+
 							"</div>"+
 							"</td>"+
 							"</tr>"
 						);
 					}
-					$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ matches[i].wvw_match_id, getMatchCallBack(i));
+					$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ viewing_match, getMatchCallBack(i));
 				}
 			}
 		});
