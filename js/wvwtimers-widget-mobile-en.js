@@ -375,7 +375,7 @@ console.log("viewing_server: "+viewing_server);
 							"</tr>"
 						);
 					}
-					$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ viewing_match, getMatchCallBack(i));
+					$.getJSON("https://api.guildwars2.com/v1/wvw/match_details.json?match_id="+ viewing_match, getMatchCallBack());
 				}
 			}
 		});
