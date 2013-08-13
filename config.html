@@ -3,11 +3,13 @@
 <head>
 <title>Guild Wars 2 API Test</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
-<script type='text/javascript' src='js/jquery-1.9.1.min.js' ></script>
 <meta name="viewport" content="width=320, initial-scale=1, maximum-scale=1">
 <link href='css/bootstrap.min.css' rel='stylesheet' media='screen'></link>
-<script type='text/javascript' src='js/bootstrap.min.js'></script>
+<link rel="stylesheet" href="css/bootstrap-switch.css"></link>
 <link href='css/wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
+<script type='text/javascript' src='js/jquery-1.9.1.min.js' ></script>
+<script type='text/javascript' src='js/bootstrap.min.js'></script>
+<script src="js/bootstrap-switch.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -26,13 +28,20 @@
   <button class="btn" id="lang-fr"><i class="flag-fr"></i></button>
   <button class="btn" id="lang-de"><i class="flag-de"></i></button>
 </div>
+<h3 id="OptionsTitle"></h3>
+<table width="300px"><tr><td width="110px">
+<div id="score-switch" class="make-switch" data-on-label="I" data-off-label="O"><input type="checkbox"></div>
+</td><td style="text-align:left;">
+<span id="showScores"></span>
+</td></tr></table>
+</br>
 </br>
 <div class="WvWTimers-widget">
     <ul class="nav nav-tabs" id="myTab">
     <li class="active"><a id="textTabNA" href="#NAserverList"></a></li>
     <li><a id="textTabEU" href="#EUserverList"></a></li>
     </ul>
-     
+
     <div class="tab-content">
     <div class="tab-pane active" id="NAserverList"></div>
     <div class="tab-pane" id="EUserverList"></div>
@@ -85,7 +94,15 @@ $(document).ready(function(){
     {
       $('#myTab a:last').tab('show');
     }
+
+    $('#score-switch').bootstrapSwitch('setState', (localStorage.show_scores == "true"));
   }
+
+  $('#score-switch').on('switch-change', function (e, data) {
+  var $el = $(data.el)
+  , value = data.value;
+  localStorage.show_scores = value;
+  });
 
   $("#btn-set").click(function(){
     localStorage.server_id = $("#appendedInputButton").val();
@@ -95,6 +112,8 @@ $(document).ready(function(){
   if(localStorage.lang == undefined)
   {
     localStorage.lang = "en";
+    $("#OptionsTitle").text("Options");
+    $("#showScores").text("Show scores");
     $("#lang-en").addClass("active");
     $("#textTabNA").text("North America");
     $("#textTabEU").text("European Union");
@@ -104,24 +123,32 @@ $(document).ready(function(){
     $("#lang-"+localStorage.lang).addClass("active");
     if(localStorage.lang == "es")
     {
+      $("#OptionsTitle").text("Opciones");
+      $("#showScores").text("Mostrar puntuaciones");
       $("#textTabNA").text("Norte America");
       $("#textTabEU").text("Unión Europea");
       $(".brand").text("Configuración");
     }
     else if (localStorage.lang == "en")
     {
+      $("#OptionsTitle").text("Options");
+      $("#showScores").text("Show scores");
       $("#textTabNA").text("North America");
       $("#textTabEU").text("European Union");
       $(".brand").text("Settings");
     }
     else if (localStorage.lang == "fr")
     {
+      $("#OptionsTitle").text("Options");
+      $("#showScores").text("Afficher scores");
       $("#textTabNA").text("Amérique du Nord");
       $("#textTabEU").text("Union européenne");
       $(".brand").text("Réglages");
     }
     else if (localStorage.lang == "de")
     {
+      $("#OptionsTitle").text("Optionen");
+      $("#showScores").text("Zeigen Partituren");
       $("#textTabNA").text("Nordamerika");
       $("#textTabEU").text("Europäische Union");
       $(".brand").text("Einstellungen");
@@ -137,6 +164,8 @@ $(document).ready(function(){
     localStorage.lang = "es";
     $("#NAserverList").empty();
     $("#EUserverList").empty();
+    $("#OptionsTitle").text("Opciones");
+    $("#showScores").text("Mostrar puntuaciones");
     $("#textTabNA").text("Norte America");
     $("#textTabEU").text("Unión Europea");
     $(".brand").text("Configuración");
@@ -152,6 +181,8 @@ $(document).ready(function(){
     localStorage.lang = "en";
     $("#NAserverList").empty();
     $("#EUserverList").empty();
+    $("#OptionsTitle").text("Options");
+    $("#showScores").text("Show scores");
     $("#textTabNA").text("North America");
     $("#textTabEU").text("European Union");
     $(".brand").text("Settings");
@@ -167,6 +198,8 @@ $(document).ready(function(){
     localStorage.lang = "fr";
     $("#NAserverList").empty();
     $("#EUserverList").empty();
+    $("#OptionsTitle").text("Options");
+    $("#showScores").text("Afficher scores");
     $("#textTabNA").text("Amérique du Nord");
     $("#textTabEU").text("Union européenne");
     $(".brand").text("Réglages");
@@ -182,6 +215,8 @@ $(document).ready(function(){
     localStorage.lang = "de";
     $("#NAserverList").empty();
     $("#EUserverList").empty();
+    $("#OptionsTitle").text("Optionen");
+    $("#showScores").text("Zeigen Partituren");
     $("#textTabNA").text("Nordamerika");
     $("#textTabEU").text("Europäische Union");
     $(".brand").text("Einstellungen");

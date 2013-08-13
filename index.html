@@ -28,7 +28,12 @@ $(document).ready(function(){
     if(localStorage.server_id == undefined || localStorage.lang == undefined)
       window.location = "config.html";
     else
+    {
       $(".WvWTimers-widget").attr("server-id", localStorage.server_id);
+      if(localStorage.show_scores == undefined) localStorage.show_scores = "true";
+      if(localStorage.show_scores == "false")
+        $(".WvWTimers-widget").attr("mode", 2);
+    }
   }
   else
   {
