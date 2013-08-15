@@ -10,16 +10,16 @@
 <link href='css/wvwtimers-widget-style.css' rel='stylesheet' media='screen'></link>
 </head>
 <body>
-    <div class="navbar">
-    <div class="navbar-inner" style="padding-right:0;">
-    <a class="brand" href="#">WvW Timers</a>
-    <ul class="nav pull-right">
-      <li class="divider-vertical" style="margin-right:3px;"></li>
-      <li><a style="font-size:30px;" href="config.html" class="gear"></a></li>
-    </ul>
-    </div>
-    </div>
-<div class="WvWTimers-widget" mode="1" style="overflow: auto;margin:auto;"></div>
+<div class="navbar">
+<div class="navbar-inner">
+<a class="brand" href="#">WvW Timers</a>
+<ul class="nav pull-right">
+  <li class="divider-vertical" style="margin-right:3px;"></li>
+  <li><a style="font-size:30px;" href="config.html" class="gear"></a></li>
+</ul>
+</div>
+</div>
+<div class="WvWTimers-widget" mode="1" style="overflow: hidden;margin:auto;"></div>
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -41,6 +41,8 @@ $(document).ready(function(){
   }
 
   $.getScript("js/wvwtimers-widget-mobile-"+localStorage.lang+".js");
+  
+
 });
 </script>
 </body>

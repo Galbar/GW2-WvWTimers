@@ -272,12 +272,12 @@ console.log("la pagina está lista!");
 if ($(".WvWTimers-widget").attr("mode") < "2")
 {
 	$(".WvWTimers-widget").append(
-	"<table id='WvW-widget-content' style='max-width: 670px; width: 100%;margin: auto auto'></table>");
+	"<table id='WvW-widget-punctuation'></table>");
 }
 if ($(".WvWTimers-widget").attr("mode") > "0")
 {
 	$(".WvWTimers-widget").append(
-	"<div style='width:100%; max-width: 670px; margin: auto auto'>"+
+	"<div id='WvW-widget-log'>"+
 	"<ul class='tabs-mobile nav-maps nav-tabs'>"+
 	"<li class='map-view-all active' id='all'>"+
 	"	<a href='#'>All</a>"+
@@ -312,15 +312,25 @@ if ($(".WvWTimers-widget").attr("mode") > "0")
 	"	<a href='#' class='RedTeamColor'>Red Borderlands</a>"+
 	"</li>"+
 	"</ul>"+
-	"<table id='log' class='table'>"+
-	"<tr id='loghead'>"+
-	"<th>Objective</th>"+
-	"<th>Time</th>"+
+	"<table class='table'>"+
+	"<thead id='loghead'>"+
+	"<tr>"+
+	"<th><span class='text'>Objective</span></th>"+
+	"<th><span class='text'>Time</span></th>"+
 	"</tr>"+
+	"</thead>"+
 	"</table>"+
+	"<div id='table-scroll'>"+
+	"<table id='log' class='table'>"+
+	"</table>"+
+	"</div>"+
 	"</div>");
 }
-$(".WvWTimers-widget").append("<span style='text-align: right; font-size: 0.7em; display: block;'>By <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>");
+
+if(localStorage.show_scores == "false")
+  $("#WvW-widget-log").css('top', 0 );
+
+$(".WvWTimers-widget").append("<span id='footer'>By <a href='https://github.com/Galbar/' target='_blank'>Galbar</a></span>");
 
 viewing_server = $(".WvWTimers-widget").attr("server-id");
 console.log("viewing_server: "+viewing_server);
@@ -350,7 +360,7 @@ console.log("viewing_server: "+viewing_server);
 					viewing_match = matches[i].wvw_match_id;
 					if ($(".WvWTimers-widget").attr("mode") < "2")
 					{
-						$("#WvW-widget-content").append(
+						$("#WvW-widget-punctuation").append(
 							"<tr><td style='min-width:150px;'>"+
 							"<span class='GreenTeamColor' id='"+matches[i].green_world_id+"'>"+ getWorldName(matches[i].green_world_id, world_names) +"</span><br>"+
 							"<span class='BlueTeamColor' id='"+matches[i].blue_world_id+"'>"+ getWorldName(matches[i].blue_world_id, world_names) +"</span><br>"+
