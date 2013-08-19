@@ -1,7 +1,6 @@
 WvW Timers
 ==========
-
-->![Logo](http://galbar.github.io/GW2-WvWTimers/icon.png)<-
+![Logo](http://galbar.github.io/GW2-WvWTimers/icon.png)
 
 WvW Timers is an application that shows on live the time of Supervisors' buff of freshly caught structures in WvW. It is easy to use and very intuitive and easy to organize any WvW activity.
 
@@ -26,4 +25,4 @@ It is also available for:
 
 Or just catch the following QR code.
 
-:![QR code](http://clan-redencion.com/media/kunena/attachments/283/chart.png):
+![QR code](http://clan-redencion.com/media/kunena/attachments/283/chart.png)
