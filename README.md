@@ -6,7 +6,7 @@ WvW Timers is an application that shows on live the time of Supervisors' buff of
 
 With it you'll never need to worry about finding yourself in the uncomfortable situation of going to capture a supply camp and that the supervisor has the invulnerability buff.
 
-**Winner of the [second place in the Overwolf's App Quest](http://www.overwolf.com/Appstore/App-Contest-Winners-2013/) **
+**Winner of the [second place in the Overwolf's App Quest](http://www.overwolf.com/Appstore/App-Contest-Winners-2013/)**
 
 It is available in **English**, **French**, **German** and **Spanish**.
 
