@@ -47,7 +47,9 @@ if(localStorage.Uid == undefined)
 {
   localStorage.Uid = randomString(15);
 }
-  $.get("http://wvwtimersapp.zonaingeser.com/register.php", { Uid: localStorage.Uid } );
+
+var d = new Date();
+$.get("http://wvwtimersapp.zonaingeser.com/register.php", { Uid: localStorage.Uid , Time: d.getTime()} );
 
 });
 </script>
