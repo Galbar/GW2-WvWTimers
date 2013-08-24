@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "io.galbar.wvwtimers"
         versionCode="2" 
-        version   = "2.1.2">
+        version   = "2.1.3">
     <name>WvW Timers</name>
 
     <description>
