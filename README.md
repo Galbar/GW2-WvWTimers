@@ -15,14 +15,20 @@ Available in the [Overwolf's App Store](http://www.overwolf.com/Appstore/#appId=
 You can access it (IE compatibility not guaranteed) at [http://galbar.github.io/GW2-WvWTimers/](http://galbar.github.io/GW2-WvWTimers/)
 
 It is also available for:
-* **Android:**[Download](https://build.phonegap.com/apps/440645/download/android/?qr_key=KisptxnCYUotJEmsyfPc)
-* **BlackBerry:** [Download](https://build.phonegap.com/apps/440645/download/blackberry/?qr_key=KisptxnCYUotJEmsyfPc)
-* **WebOS:** [Download](https://build.phonegap.com/apps/440645/download/webos/?qr_key=KisptxnCYUotJEmsyfPc)
-* **Symbian:** [Download](https://build.phonegap.com/apps/440645/download/symbian/?qr_key=KisptxnCYUotJEmsyfPc)
-* **Windows Phone:** [Download](https://build.phonegap.com/apps/440645/download/winphone/?qr_key=KisptxnCYUotJEmsyfPc)
+* **Android:**[Download](https://build.phonegap.com/apps/440645/download/android/)
+* **BlackBerry:** [Download](https://build.phonegap.com/apps/440645/download/blackberry/)
+* **WebOS:** [Download](https://build.phonegap.com/apps/440645/download/webos/)
+* **Symbian:** [Download](https://build.phonegap.com/apps/440645/download/symbian/)
+* **Windows Phone:** [Download](https://build.phonegap.com/apps/440645/download/winphone/)
 
 (For iPhone you can access the [link above](http://galbar.github.io/GW2-WvWTimers/) )
 
 Or just catch the following QR code.
 
 ![QR code](http://clan-redencion.com/media/kunena/attachments/283/chart.png)
+
+Usage Conditions
+================
+You can use it for free and as you like, the only thing I ask you is that if you upload it to your own server, insert a link to this project's page.
+
+Thanks ;)
