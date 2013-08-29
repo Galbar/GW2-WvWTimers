@@ -26,3 +26,9 @@ It is also available for:
 Or just catch the following QR code.
 
 ![QR code](http://clan-redencion.com/media/kunena/attachments/283/chart.png)
+
+Usage Conditions
+================
+You can use it for free and as you like, the only thing I ask you is that if you upload it to your own server, insert a link to this project's page.
+
+Thanks ;)
