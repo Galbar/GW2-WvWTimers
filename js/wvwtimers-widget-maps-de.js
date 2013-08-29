@@ -335,7 +335,7 @@ console.log("viewing_server: "+viewing_server);
 		viewing_map = $(this).attr("id");
 	});
 	console.log("getting ready");
-	$.getJSON("https://api.guildwars2.com/v1/world_names.json?", function (world_names) {
+	$.getJSON("https://api.guildwars2.com/v1/world_names.json?lang=de", function (world_names) {
 		$.getJSON("https://api.guildwars2.com/v1/wvw/matches.json?", function (aux_matches) {
 			var matches = aux_matches.wvw_matches;
 			var found = false;
