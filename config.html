@@ -29,11 +29,18 @@
   <button class="btn" id="lang-de"><i class="flag-de"></i></button>
 </div>
 <h3 id="OptionsTitle"></h3>
-<table width="300px"><tr><td width="110px">
+<table width="300px">
+<tr><td width="110px">
 <div id="score-switch" class="make-switch" data-on-label="I" data-off-label="O"><input type="checkbox"></div>
 </td><td style="text-align:left;">
 <span id="showScores"></span>
-</td></tr></table>
+</td></tr>
+<tr><td width="110px">
+<div id="listOrMap-switch" class="make-switch" data-on-label="I" data-off-label="O"><input type="checkbox"></div>
+</td><td style="text-align:left;">
+<span id="mapMode"></span>
+</td></tr>
+</table>
 </br>
 </br>
 <div class="WvWTimers-serverlist">
@@ -95,13 +102,31 @@ $(document).ready(function(){
       $('#myTab a:last').tab('show');
     }
 
-    $('#score-switch').bootstrapSwitch('setState', (localStorage.show_scores == "true"));
   }
+
+  if (localStorage.show_scores == undefined)
+  {
+    localStorage.show_scores = "true";
+  };
+  if (localStorage.show_maps == undefined)
+  {
+    localStorage.show_maps = "false";
+  };
+
+    $('#score-switch').bootstrapSwitch('setState', (localStorage.show_scores == "true"));
+    $('#listOrMap-switch').bootstrapSwitch('setState', (localStorage.show_maps == "true"));
+
 
   $('#score-switch').on('switch-change', function (e, data) {
   var $el = $(data.el)
   , value = data.value;
   localStorage.show_scores = value;
+  });
+
+  $('#listOrMap-switch').on('switch-change', function (e, data) {
+  var $el = $(data.el)
+  , value = data.value;
+  localStorage.show_maps = value;
   });
 
   $("#btn-set").click(function(){
@@ -114,6 +139,7 @@ $(document).ready(function(){
     localStorage.lang = "en";
     $("#OptionsTitle").text("Options");
     $("#showScores").text("Show scores");
+    $("#mapMode").text("Enable map view");
     $("#lang-en").addClass("active");
     $("#textTabNA").text("North America");
     $("#textTabEU").text("European Union");
@@ -125,6 +151,7 @@ $(document).ready(function(){
     {
       $("#OptionsTitle").text("Opciones");
       $("#showScores").text("Mostrar puntuaciones");
+      $("#mapMode").text("Activar vista de mapa");
       $("#textTabNA").text("Norte America");
       $("#textTabEU").text("Unión Europea");
       $(".brand").text("Configuración");
@@ -133,6 +160,7 @@ $(document).ready(function(){
     {
       $("#OptionsTitle").text("Options");
       $("#showScores").text("Show scores");
+      $("#mapMode").text("Enable map view");
       $("#textTabNA").text("North America");
       $("#textTabEU").text("European Union");
       $(".brand").text("Settings");
@@ -141,6 +169,7 @@ $(document).ready(function(){
     {
       $("#OptionsTitle").text("Options");
       $("#showScores").text("Afficher scores");
+      $("#mapMode").text("Activer vue de carte");
       $("#textTabNA").text("Amérique du Nord");
       $("#textTabEU").text("Union européenne");
       $(".brand").text("Réglages");
@@ -149,6 +178,7 @@ $(document).ready(function(){
     {
       $("#OptionsTitle").text("Optionen");
       $("#showScores").text("Zeigen Partituren");
+      $("#mapMode").text("Aktivieren der karte anzeigen");
       $("#textTabNA").text("Nordamerika");
       $("#textTabEU").text("Europäische Union");
       $(".brand").text("Einstellungen");
@@ -166,6 +196,7 @@ $(document).ready(function(){
     $("#EUserverList").empty();
     $("#OptionsTitle").text("Opciones");
     $("#showScores").text("Mostrar puntuaciones");
+    $("#mapMode").text("Activar vista de mapa");
     $("#textTabNA").text("Norte America");
     $("#textTabEU").text("Unión Europea");
     $(".brand").text("Configuración");
@@ -183,6 +214,7 @@ $(document).ready(function(){
     $("#EUserverList").empty();
     $("#OptionsTitle").text("Options");
     $("#showScores").text("Show scores");
+    $("#mapMode").text("Enable map view");
     $("#textTabNA").text("North America");
     $("#textTabEU").text("European Union");
     $(".brand").text("Settings");
@@ -200,6 +232,7 @@ $(document).ready(function(){
     $("#EUserverList").empty();
     $("#OptionsTitle").text("Options");
     $("#showScores").text("Afficher scores");
+    $("#mapMode").text("Activer vue de carte");
     $("#textTabNA").text("Amérique du Nord");
     $("#textTabEU").text("Union européenne");
     $(".brand").text("Réglages");
@@ -217,6 +250,7 @@ $(document).ready(function(){
     $("#EUserverList").empty();
     $("#OptionsTitle").text("Optionen");
     $("#showScores").text("Zeigen Partituren");
+    $("#mapMode").text("Aktivieren der karte anzeigen");
     $("#textTabNA").text("Nordamerika");
     $("#textTabEU").text("Europäische Union");
     $(".brand").text("Einstellungen");

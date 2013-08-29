@@ -100,11 +100,18 @@ body{height:100%;}
   width:100%;
 }
 
+.WvWTimers-widget #map-scroll {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  overflow:auto;
+  width:100%;
+}
+
 .WvWTimers-widget #footer{position:absolute;bottom:0;right:0; font-size: 0.7em; display: block;}
 
 .WvWTimers-widget .label
 {
-	cursor:pointer;
 	font-size:14px;
 	font-weight:normal;
 	line-height:20px;
@@ -185,6 +192,11 @@ body{height:100%;}
 			border-radius: 14px;
 }
 
+.WvWTimers-widget .objective-Unknown
+{
+	background-color: #999;
+}
+
 .WvWTimers-widget .objective-Green
 {
 	background-color: #5eb95e;
@@ -240,6 +252,7 @@ body{height:100%;}
 
 .serverbox
 {
+	cursor:pointer;
 	font-weight: bold;
 	padding: 10px 0px;
 	margin: 5px;
@@ -287,4 +300,86 @@ body{height:100%;}
 .flag-de
 {
 	background-image: url("../img/DE.png");
+}
+
+#eternal-map
+{
+	position:relative;
+	background-image:url("../img/eternal_map.png");
+	width:500px;
+	height:500px;
+	margin:auto;
+}
+
+#green-map
+{
+	position:relative;
+	display: none;
+	background-image:url("../img/borderland_map.png");
+	width:500px;
+	height:680px;
+	margin:auto;
+}
+
+#blue-map
+{
+	position:relative;
+	display: none;
+	background-image:url("../img/borderland_map.png");
+	width:500px;
+	height:680px;
+	margin:auto;
+}
+
+#red-map
+{
+	position:relative;
+	display: none;
+	background-image:url("../img/borderland_map.png");
+	width:500px;
+	height:680px;
+	margin:auto;
+}
+
+.map-structure-container
+{
+	position:absolute;
+	width:40px; 
+	height:40px; 
+}
+
+.map-structure-container .objective-Green
+{
+	background-color: #468847;
+}
+
+.map-structure-container .objective-Blue
+{
+	background-color: #3a87ad;
+}
+
+.map-structure-container .objective-Red
+{
+	background-color: #b94a48;
+}
+
+.map-structure-container [class^="objective-"],
+.map-structure-container [class*=" objective-"]
+{
+	margin:0;
+	top: 0;
+	margin: auto;
+	display: block;
+}
+
+.map-structure-container .label
+{
+	text-shadow: -1px 0 1px black, 0 1px 1px black, 1px 0 1px black, 0 -1px 1px black;
+	background-color: transparent;
+	position: relative;
+	top:-3px;
+	text-align: center;
+	width:30px;
+	display:none;
+	margin: auto;
 }

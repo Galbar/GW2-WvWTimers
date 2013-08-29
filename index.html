@@ -27,7 +27,7 @@
 $(document).ready(function(){
   if(typeof(Storage)!="undefined")
   {
-    if(localStorage.server_id == undefined || localStorage.lang == undefined)
+    if(localStorage.server_id == undefined || localStorage.lang == undefined || localStorage.show_maps == undefined)
       window.location = "config.html";
     else
     {
@@ -42,16 +42,24 @@ $(document).ready(function(){
     alert("Sorry! No web storage support..");
   }
 
+if (localStorage.show_maps == "true")
+{
+  $.getScript("js/wvwtimers-widget-maps-"+localStorage.lang+".js");
+}
+else
+{
   $.getScript("js/wvwtimers-widget-mobile-"+localStorage.lang+".js");
+};
 
 if(localStorage.Uid == undefined)
 {
   localStorage.Uid = randomString(15);
 }
-
+/*
 var d = new Date();
 $.get("http://wvwtimersapp.zonaingeser.com/register.php", { Uid: localStorage.Uid , Time: d.getTime(), ServerId: localStorage.server_id, Language: localStorage.lang} );
 
+*/
 });
 </script>
 </body>
