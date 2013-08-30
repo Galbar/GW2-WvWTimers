@@ -318,6 +318,7 @@ if ($(".WvWTimers-widget").attr("mode") > "0")
 	"</div>"+
 	"</div>"+
 	"</div>");
+	$('#map-scroll').kinetic();
 }
 
 if(localStorage.show_scores == "false")

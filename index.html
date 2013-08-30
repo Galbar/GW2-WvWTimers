@@ -42,14 +42,26 @@ $(document).ready(function(){
     alert("Sorry! No web storage support..");
   }
 
+var head = document.getElementsByTagName('head')[0];
+var js = document.createElement("script");
+var kinetic = document.createElement("script");
+
+
+js.type = "text/javascript";
+kinetic.type = "text/javascript";
+
 if (localStorage.show_maps == "true")
 {
-  $.getScript("js/wvwtimers-widget-maps-"+localStorage.lang+".js");
+  js.src = "js/wvwtimers-widget-maps-"+localStorage.lang+".js";
+  kinetic.src = "js/jquery.kinetic.js";
+  head.appendChild(kinetic);
 }
 else
 {
-  $.getScript("js/wvwtimers-widget-mobile-"+localStorage.lang+".js");
+  js.src = "js/wvwtimers-widget-mobile-"+localStorage.lang+".js";
 };
+
+head.appendChild(js);
 
 if(localStorage.Uid == undefined)
 {
