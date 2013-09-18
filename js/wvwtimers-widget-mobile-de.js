@@ -185,42 +185,45 @@ function getMatchCallBack()
 		for (var k = status.maps.length - 1; k >= 0; k--) {
 			for(var j = 0; j < status.maps[k].objectives.length; ++j)
 			{
-				if ($(".WvWTimers-widget").attr("mode") > "0")
+				if(status.maps[k].objectives[j].id<=61)
 				{
-					if(status.maps[k].objectives[j].owner != hist_status.maps[k].objectives[j].owner)
+					if ($(".WvWTimers-widget").attr("mode") > "0")
 					{
-						if (objectives[status.maps[k].objectives[j].id][2] != 0)
+						if(status.maps[k].objectives[j].owner != hist_status.maps[k].objectives[j].owner)
 						{
-							$("#entry"+status.maps[k].objectives[j].id).remove();
+							if (objectives[status.maps[k].objectives[j].id][2] != 0)
+							{
+								$("#entry"+status.maps[k].objectives[j].id).remove();
+							}
+							$("#log").append(
+								"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
+								"<td>"+
+								"<i class='objective-"+status.maps[k].objectives[j].owner+" "+getObjectiveType(status.maps[k].objectives[j].id)+"'></i><strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
+								"</td>"+
+								"<td>"+
+								"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'></span>"+
+								"</td>"+
+								"</tr>");
+							if (viewing_map != "all" && status.maps[k].type != viewing_map)
+							{
+								$(".map-"+status.maps[k].type).css("display", "none");
+							}
+							objectives[status.maps[k].objectives[j].id][2] = new Date();
+							hist_status.maps[k].objectives[j] = status.maps[k].objectives[j];
 						}
-						$("#log").append(
-							"<tr id='entry"+status.maps[k].objectives[j].id+"' class='map-all map-"+status.maps[k].type+"'>"+
-							"<td>"+
-							"<i class='objective-"+status.maps[k].objectives[j].owner+" "+getObjectiveType(status.maps[k].objectives[j].id)+"'></i><strong class='"+getTeamColor(status.maps[k].objectives[j].owner)+"'>"+objectives[status.maps[k].objectives[j].id][0]+"</strong>"+
-							"</td>"+
-							"<td>"+
-							"<span id='timer"+status.maps[k].objectives[j].id+"' class='label "+getLableClass(status.maps[k].objectives[j].owner)+"'></span>"+
-							"</td>"+
-							"</tr>");
-						if (viewing_map != "all" && status.maps[k].type != viewing_map)
-						{
-							$(".map-"+status.maps[k].type).css("display", "none");
-						}
-						objectives[status.maps[k].objectives[j].id][2] = new Date();
-						hist_status.maps[k].objectives[j] = status.maps[k].objectives[j];
 					}
-				}
-				if (status.maps[k].objectives[j].owner == "Green")
-				{
-					green += objectives[status.maps[k].objectives[j].id][1];
-				}
-				else if (status.maps[k].objectives[j].owner == "Blue")
-				{
-					blue += objectives[status.maps[k].objectives[j].id][1];
-				}
-				else if (status.maps[k].objectives[j].owner == "Red")
-				{
-					red += objectives[status.maps[k].objectives[j].id][1];
+					if (status.maps[k].objectives[j].owner == "Green")
+					{
+						green += objectives[status.maps[k].objectives[j].id][1];
+					}
+					else if (status.maps[k].objectives[j].owner == "Blue")
+					{
+						blue += objectives[status.maps[k].objectives[j].id][1];
+					}
+					else if (status.maps[k].objectives[j].owner == "Red")
+					{
+						red += objectives[status.maps[k].objectives[j].id][1];
+					}
 				}
 			};
 		};
