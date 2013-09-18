@@ -104,7 +104,7 @@ body{height:100%;}
   position: absolute;
   top: 40px;
   bottom: 0;
-  overflow:auto;
+  overflow:hidden;
   width:100%;
 }
 
