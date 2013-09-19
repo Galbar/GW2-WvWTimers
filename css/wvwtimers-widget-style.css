@@ -1,5 +1,9 @@
 html{min-height:100%;position:relative}/* make sure it is at least as tall as the viewport */
 body{height:100%;}
+*{ -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;}
 
 .WvWTimers-widget, .WvWTimers-serverlist { 
     margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#333;background-color:#fff;padding:0;max-width:670px;width:100%;}
